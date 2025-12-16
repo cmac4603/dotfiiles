@@ -33,7 +33,9 @@ set -gx DISABLE_AUTO_TITLE 'true'
 
 set -gx KUBE_EDITOR "nvim -u NORC"
 
-set -gx LOCAL_KUBE_CONTEXT kind-kind
+# local k8s settings
+## set -gx LOCAL_KUBE_CONTEXT rancher-desktop
+## set -gx LOCAL_K8S_API_URL http://127.0.0.1:6443
 
 set -gx LLDB_EXEC_PATH "/opt/homebrew/opt/llvm/bin/lldb-dap"
 
