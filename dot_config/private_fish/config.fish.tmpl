@@ -29,21 +29,21 @@ fish_add_path $HOME/.krew/bin
 set fish_color_autosuggestion red
 
 # for tmux, because it asked me to add this
-export DISABLE_AUTO_TITLE='true'
+set -gx DISABLE_AUTO_TITLE 'true'
 
-export KUBE_EDITOR="nvim -u NORC"
+set -gx KUBE_EDITOR "nvim -u NORC"
+
+set -gx LOCAL_KUBE_CONTEXT kind-kind
 
 set -gx LLDB_EXEC_PATH "/opt/homebrew/opt/llvm/bin/lldb-dap"
-
-# buildkit now please, docker
-export DOCKER_BUILDKIT=1
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/cmacrae/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/cmacrae/Downloads/google-cloud-sdk/path.fish.inc'; end
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
-source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+## source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
 alias claude="/Users/cmacrae/.claude/local/claude"
 
 # bun
@@ -52,6 +52,10 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 # opencode
 fish_add_path /Users/cmacrae/.opencode/bin
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/cmacrae/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 {{- else }}
 if status is-interactive
     # Commands to run in interactive sessions can go here
