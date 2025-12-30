@@ -77,23 +77,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
         local opts = { buffer = event.buf }
-        local builtin = require('telescope.builtin')
 
-        vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-        vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
+        vim.keymap.set("n", "ga", "<CMD>lua vim.lsp.buf.code_action()<CR>", opts)
+        vim.keymap.set("n", "gd", "<CMD>lua vim.lsp.buf.definition()<CR>", opts)
         vim.keymap.set("n", "gh",
-            "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>",
+            "<CMD>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>",
             opts
         )
         vim.keymap.set("n", "gi",
-            "<cmd>lua require('tiny-inline-diagnostic').toggle()<cr>",
+            "<CMD>lua require('tiny-inline-diagnostic').toggle()<CR>",
             opts
         )
         -- waiting for https://github.com/neovim/neovim/pull/23871
         -- vim.keymap.set("n", "gr", function() require('telescope.builtin').lsp_references() end,
         --     { noremap = true, silent = true })
-        vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
-        vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+        vim.keymap.set("n", "gF", "<CMD>lua vim.lsp.buf.format()<CR>", opts)
+        vim.keymap.set("n", "gR", "<CMD>lua vim.lsp.buf.rename()<CR>", opts)
     end,
 })
 
