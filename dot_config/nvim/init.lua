@@ -35,6 +35,8 @@ require("mason-lspconfig").setup({
         -- "bacon",
         "bacon_ls",
         "basedpyright",
+        -- "cpptools",  -- wrong names?
+        -- "codelldb",  -- wrong names?
         "cssls",
         "dockerls",
         "gopls",
@@ -57,6 +59,8 @@ require("mason-lspconfig").setup({
 vim.lsp.enable({
     "bacon_ls",
     "basedpyright",
+    "cpptools",
+    "codelldb",
     "cssls",
     "djlint",
     "dockerls",
