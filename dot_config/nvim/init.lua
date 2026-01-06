@@ -34,7 +34,6 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         -- "bacon",
         "bacon_ls",
-        "basedpyright",
         -- "cpptools",  -- wrong names?
         -- "codelldb",  -- wrong names?
         "cssls",
@@ -52,14 +51,13 @@ require("mason-lspconfig").setup({
         "terraformls",
         "taplo",
         "ts_ls",
-        -- "ty",
+        "ty",
         "yamlls",
     },
 })
 
 vim.lsp.enable({
     "bacon_ls",
-    "basedpyright",
     "cpptools",
     "codelldb",
     "cssls",
@@ -75,8 +73,7 @@ vim.lsp.enable({
     -- NOTE: allow rustaceanvim to setup
     -- "rust_analyzer",
     "taplo", -- toml
-    -- TODO: reenable when ty gets better
-    -- "ty",
+    "ty",
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -188,32 +185,6 @@ vim.lsp.config("lua_ls", {
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
                 enable = false,
-            },
-        },
-    },
-})
-
--- PYTHON
-vim.lsp.config("basedpyright", {
-    -- NOTE: may not be needed when this feature is released (up top)
-    -- capabilities = {
-    --     textDocument = {
-    --         onTypeFormatting = {
-    --             dynamicRegistration = true,
-    --         },
-    --     },
-    -- },
-    settings = {
-        basedpyright = {
-            -- Using Ruff's import organizer
-            disableOrganizeImports = true,
-            -- investigate slowdown
-            reportImportCycles = false,
-            typeCheckingMode = "recommended",
-        },
-        python = {
-            analysis = {
-                ignore = { "*" },
             },
         },
     },
