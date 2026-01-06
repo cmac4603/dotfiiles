@@ -43,6 +43,7 @@ require("mason-lspconfig").setup({
         "helm_ls",
         "html",
         -- "htmx",  -- borked right now on macos
+        "jinja_lsp",
         "jsonls",
         "lua_ls",
         "marksman",
@@ -68,6 +69,7 @@ vim.lsp.enable({
     "helm_ls",
     "html",
     -- "htmx",
+    "jinja_lsp",
     "lua_ls",
     "ruff",
     -- NOTE: allow rustaceanvim to setup
@@ -134,6 +136,15 @@ vim.lsp.config("html", {
         },
     },
 })
+
+-- JINJA
+vim.filetype.add {
+  extension = {
+    jinja = 'jinja',
+    jinja2 = 'jinja',
+    j2 = 'jinja',
+  },
+}
 
 -- JSON
 vim.lsp.config("jsonls", {
