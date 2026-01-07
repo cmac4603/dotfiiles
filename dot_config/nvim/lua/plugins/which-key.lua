@@ -13,16 +13,20 @@ return {
     config = function()
         local wk = require("which-key")
         local harpoon = require("harpoon")
+        local _99 = require("99")
 
         wk.add({
-            { "<leader>a",  group = "AI" },
-            { "<leader>aa", "<CMD>CodeCompanionActions<CR>",     desc = "Actions",             mode = { "n", "v" } },
-            { "<leader>ae", "<CMD>CodeCompanion /explain<CR>",   desc = "Explain Code",        mode = { "n", "v" } },
-            { "<leader>ac", "<CMD>CodeCompanionChat<CR>",        desc = "Open Chat" },
-            { "<leader>ag", "<CMD>CodeCompanion /commit<CR>",    desc = "Commit Message" },
-            { "<leader>am", "<CMD>MCPHub<CR>",                   desc = "Open MCPHub",         mode = { "n" } },
-            { "<leader>at", "<CMD>CodeCompanionChat Toggle<CR>", desc = "Toggle" },
-            { "<leader>au", "<CMD>CodeCompanion /unittests<CR>", desc = "Generate Unit Tests", mode = { "n", "v" } },
+            { "<leader>a",   group = "AI" },
+            { "<leader>aa",  "<CMD>CodeCompanionActions<CR>",     desc = "Actions",             mode = { "n", "v" } },
+            { "<leader>ae",  "<CMD>CodeCompanion /explain<CR>",   desc = "Explain Code",        mode = { "n", "v" } },
+            { "<leader>ac",  "<CMD>CodeCompanionChat<CR>",        desc = "Open Chat" },
+            { "<leader>af",  _99.fill_in_function(),              desc = "Fill in function" },
+            { "<leader>av",  _99.visual(),                        desc = "Fill in function" },
+            { "<leader>a9s", _99.stop_all_requests(),             desc = "Fill in function" },
+            { "<leader>ag",  "<CMD>CodeCompanion /commit<CR>",    desc = "Commit Message" },
+            { "<leader>am",  "<CMD>MCPHub<CR>",                   desc = "Open MCPHub",         mode = { "n" } },
+            { "<leader>at",  "<CMD>CodeCompanionChat Toggle<CR>", desc = "Toggle" },
+            { "<leader>au",  "<CMD>CodeCompanion /unittests<CR>", desc = "Generate Unit Tests", mode = { "n", "v" } },
         })
 
         wk.add({

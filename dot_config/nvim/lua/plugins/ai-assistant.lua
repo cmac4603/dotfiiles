@@ -119,4 +119,17 @@ return {
             { '<leader>ot', function() require('opencode').prompt('Add tests for @selection') end,                            desc = 'Test selection',                  mode = 'v', },
         },
     },
+
+    {
+        "ThePrimeagen/99",
+        config = function()
+            local _99 = require("99")
+            _99.setup({
+                md_files = {
+                    "AGENT.md",
+                },
+            })
+        end,
+    },
+
 }
