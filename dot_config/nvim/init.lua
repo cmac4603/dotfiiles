@@ -37,7 +37,7 @@ require("mason-tool-installer").setup({
         "basedpyright",
         "cpptools",
         "codelldb",
-        "codespell",
+        "cspell-lsp",
         "cssls",
         "dockerls",
         "gopls",
@@ -63,7 +63,7 @@ vim.lsp.enable({
     "basedpyright",
     "cpptools",
     "codelldb",
-    "codespell",
+    "cspell_lsp",
     "cssls",
     "djlint",
     "dockerls",
@@ -104,6 +104,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
+-- CSPELL
+vim.lsp.config("cspell_lsp", {
+    cmd = { "cspell-lsp", "--stdio" },
+    -- filetypes = { ... }
+})
+
 -- GO
 vim.lsp.config("gopls", {
     settings = {
@@ -141,11 +147,11 @@ vim.lsp.config("html", {
 
 -- JINJA
 vim.filetype.add {
-  extension = {
-    jinja = 'jinja',
-    jinja2 = 'jinja',
-    j2 = 'jinja',
-  },
+    extension = {
+        jinja = 'jinja',
+        jinja2 = 'jinja',
+        j2 = 'jinja',
+    },
 }
 
 -- JSON
