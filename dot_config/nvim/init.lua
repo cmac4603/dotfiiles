@@ -31,6 +31,7 @@ vim.g.trailing_whitespace_exclude_filetypes = {
 
 require("mason").setup()
 require("mason-tool-installer").setup({
+    auto_update = true,
     ensure_installed = {
         "bacon_ls",
         "basedpyright",
