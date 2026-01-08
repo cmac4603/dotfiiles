@@ -2,6 +2,7 @@ return {
 
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     "neovim/nvim-lspconfig",
     "b0o/schemastore.nvim",
 

@@ -30,13 +30,12 @@ vim.g.trailing_whitespace_exclude_filetypes = {
 }
 
 require("mason").setup()
-require("mason-lspconfig").setup({
+require("mason-tool-installer").setup({
     ensure_installed = {
-        -- "bacon",
         "bacon_ls",
         "basedpyright",
-        -- "cpptools",  -- wrong names?
-        -- "codelldb",  -- wrong names?
+        "cpptools",
+        "codelldb",
         "codespell",
         "cssls",
         "dockerls",
