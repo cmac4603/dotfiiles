@@ -1,0 +1,28 @@
+---
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+version: '0.2'
+words:
+  - appropes
+  - automagically
+  - autouse
+  - Cfgs
+  - codelldb
+  - dockerls
+  - fastly
+  - finalizers
+  - gopls
+  - hearstapps
+  - htmx
+  - igoringress
+  - ingressversion
+  - ingressversions
+  - jsonls
+  - keymap
+  - kopf
+  - kubeprod
+  - noremap
+  - nvim
+  - rustaceanvim
+  - taplo
+  - venv
+  - yamlls

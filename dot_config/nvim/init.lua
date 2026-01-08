@@ -106,8 +106,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- CSPELL
 vim.lsp.config("cspell_lsp", {
-    cmd = { "cspell-lsp", "--stdio" },
-    -- filetypes = { ... }
+    cmd = { "cspell-lsp", "--stdio", "--config", "~/.config/cspell/cspell.config.yaml" },
 })
 
 -- GO
