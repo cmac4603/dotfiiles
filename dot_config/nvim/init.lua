@@ -108,6 +108,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.lsp.config("cspell_lsp", {
     cmd = { "cspell-lsp", "--stdio", "--config", "~/.config/cspell/cspell.config.yaml" },
 })
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        local buf = args.buf
+        if client and client.name == "cspell_lsp" then
+            local ft = vim.bo[buf].filetype
+            if ft == "terminal" then
+                vim.lsp.buf_detach_client(buf, client.id)
+            end
+        end
+    end,
+    desc = "Detach cspell_lsp from terminal buffers",
+})
 
 -- GO
 vim.lsp.config("gopls", {
