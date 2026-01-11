@@ -40,4 +40,20 @@ return {
         dependencies = { "MunifTanjim/nui.nvim" },
         cmd = "CodeDiff",
     },
+
+    {
+        "cmac4603/gh-pr.nvim",
+        branch = "start",
+        config = function()
+            require("gh-pr").setup()
+        end,
+    },
+
+    -- local dev plugin location (adder)
+    -- {
+    --     dir = "~/dev/repos/gh-pr.nvim.git/start",
+    --     name = "gh-pr",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    -- },
+
 }

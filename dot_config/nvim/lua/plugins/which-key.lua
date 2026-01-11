@@ -15,14 +15,14 @@ return {
         local harpoon = require("harpoon")
 
         wk.add({
-            { "<leader>a",   group = "AI" },
-            { "<leader>aa",  "<CMD>CodeCompanionActions<CR>",     desc = "Actions",             mode = { "n", "v" } },
-            { "<leader>ae",  "<CMD>CodeCompanion /explain<CR>",   desc = "Explain Code",        mode = { "n", "v" } },
-            { "<leader>ac",  "<CMD>CodeCompanionChat<CR>",        desc = "Open Chat" },
-            { "<leader>ag",  "<CMD>CodeCompanion /commit<CR>",    desc = "Commit Message" },
-            { "<leader>am",  "<CMD>MCPHub<CR>",                   desc = "Open MCPHub",         mode = { "n" } },
-            { "<leader>at",  "<CMD>CodeCompanionChat Toggle<CR>", desc = "Toggle" },
-            { "<leader>au",  "<CMD>CodeCompanion /unittests<CR>", desc = "Generate Unit Tests", mode = { "n", "v" } },
+            { "<leader>a",  group = "AI" },
+            { "<leader>aa", "<CMD>CodeCompanionActions<CR>",     desc = "Actions",             mode = { "n", "v" } },
+            { "<leader>ae", "<CMD>CodeCompanion /explain<CR>",   desc = "Explain Code",        mode = { "n", "v" } },
+            { "<leader>ac", "<CMD>CodeCompanionChat<CR>",        desc = "Open Chat" },
+            { "<leader>ag", "<CMD>CodeCompanion /commit<CR>",    desc = "Commit Message" },
+            { "<leader>am", "<CMD>MCPHub<CR>",                   desc = "Open MCPHub",         mode = { "n" } },
+            { "<leader>at", "<CMD>CodeCompanionChat Toggle<CR>", desc = "Toggle" },
+            { "<leader>au", "<CMD>CodeCompanion /unittests<CR>", desc = "Generate Unit Tests", mode = { "n", "v" } },
         })
 
         wk.add({
@@ -70,6 +70,7 @@ return {
             { "<leader>g",   group = "Git" },
             { '<leader>ga',  '<cmd>Pipeline<cr>',                                                   desc = 'Open GitHub Actions Pipelines' },
             { "<leader>gb",  "<CMD>BlameToggle window<CR>",                                         desc = "Git Blame Window" },
+            { "<leader>gc",  "<CMD>GhPrComments<CR>",                                               desc = "GitHub PR Comments" },
             { "<leader>gdh", ":CodeDiff HEAD~",                                                     desc = "Open CodeDiff incl. last x commits" },
             { "<leader>gd1", "<CMD>CodeDiff HEAD~1<CR>",                                            desc = "Open CodeDiff incl. last 1 commits" },
             { "<leader>gd2", "<CMD>CodeDiff HEAD~2<CR>",                                            desc = "Open CodeDiff incl. last 2 commits" },
