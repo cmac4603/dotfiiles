@@ -53,7 +53,9 @@ return {
     -- {
     --     dir = "~/dev/repos/gh-pr.nvim.git/start",
     --     name = "gh-pr",
-    --     dependencies = { "nvim-lua/plenary.nvim" },
+    --     config = function()
+    --         require("gh-pr").setup()
+    --     end,
     -- },
 
 }
