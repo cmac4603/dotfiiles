@@ -5,11 +5,17 @@ words:
   - appropes
   - automagically
   - autouse
+  - bufnr
+  - bufs
   - Cfgs
+  - cmac
   - codelldb
   - dockerls
   - fastly
   - finalizers
+  - fnameescape
+  - fnamemodify
+  - ghpr
   - gopls
   - hearstapps
   - hikaru
@@ -24,6 +30,7 @@ words:
   - kubeprod
   - noremap
   - nvim
+  - rockspec
   - rustaceanvim
   - taplo
   - venv
