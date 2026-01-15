@@ -4,6 +4,7 @@ version: '0.2'
 words:
   - appropes
   - automagically
+  - autoread
   - autouse
   - bufnr
   - bufs
@@ -17,6 +18,7 @@ words:
   - finalizers
   - fnameescape
   - fnamemodify
+  - folke
   - ghpr
   - gopls
   - hearstapps
@@ -32,6 +34,8 @@ words:
   - kubeprod
   - noremap
   - nvim
+  - opencode
+  - primagean
   - rockspec
   - rustaceanvim
   - stylesheet
