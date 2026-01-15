@@ -107,6 +107,7 @@ return {
 
         -- random assortment
         wk.add({
+            { "<leader>oo",  "<CMD>!tmux-sessionizer -s 0 --vsplit<CR>",    desc = "Open Opencode In New Tmux Pane" },
             { "<leader>csv", "<CMD>CsvViewToggle<CR>",                      desc = "Toggle CSV View" },
             { "<leader>ht",  ":Hardtime toggle<CR>",                        desc = "Hardtime Toggle" },
             { "<leader>l",   function() Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
