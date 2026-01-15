@@ -11,6 +11,8 @@ words:
   - cmac
   - codelldb
   - dockerls
+  - elif
+  - endfor
   - fastly
   - finalizers
   - fnameescape
@@ -32,6 +34,7 @@ words:
   - nvim
   - rockspec
   - rustaceanvim
+  - stylesheet
   - taplo
   - venv
   - yamlls
