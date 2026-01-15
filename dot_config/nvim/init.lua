@@ -77,6 +77,7 @@ vim.lsp.enable({
     -- NOTE: allow rustaceanvim to setup
     -- "rust_analyzer",
     "taplo", -- toml
+    "tailwindcss",
     -- TODO: reenable when ty gets better
     -- "ty",
 })
