@@ -100,24 +100,40 @@ return {
     {
         'NickvanDyke/opencode.nvim',
         dependencies = {
-            'folke/snacks.nvim',
+            { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
         },
         ---@type opencode.Config
-        opts = {
-            auto_reload = true,
-        },
-        keys = {
-            { '<leader>ot', function() require('opencode').toggle() end,                                                      desc = 'Toggle opencode', },
-            { '<leader>oa', function() require('opencode').ask() end,                                                         desc = 'Ask opencode',                    mode = { 'n', 'v' }, },
-            { '<leader>oA', function() require('opencode').ask('@file ') end,                                                 desc = 'Ask opencode about current file', mode = { 'n', 'v' }, },
-            { '<leader>on', function() require('opencode').command('/new') end,                                               desc = 'New session', },
-            { '<leader>oe', function() require('opencode').prompt('Explain @cursor and its context') end,                     desc = 'Explain code near cursor' },
-            { '<leader>or', function() require('opencode').prompt('Review @file for correctness and readability') end,        desc = 'Review file', },
-            { '<leader>of', function() require('opencode').prompt('Fix these @diagnostics') end,                              desc = 'Fix errors', },
-            { '<leader>oo', function() require('opencode').prompt('Optimize @selection for performance and readability') end, desc = 'Optimize selection',              mode = 'v', },
-            { '<leader>od', function() require('opencode').prompt('Add documentation comments for @selection') end,           desc = 'Document selection',              mode = 'v', },
-            { '<leader>ot', function() require('opencode').prompt('Add tests for @selection') end,                            desc = 'Test selection',                  mode = 'v', },
-        },
+        config = function()
+            vim.g.opencode_opts = {
+                provider = {
+                    enabled = "tmux",
+                    tmux = {}
+                }
+            }
+            -- Required for `opts.events.reload`.
+            vim.o.autoread = true
+
+            vim.keymap.set({ "n", "x" }, "<leader>oa",
+                function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode" })
+            vim.keymap.set({ "n", "x" }, "<leader>os", function() require("opencode").select() end,
+                { desc = "Execute opencode action…" })
+            vim.keymap.set({ "n", "t" }, "<leader>ot", function() require("opencode").toggle() end,
+                { desc = "Toggle opencode" })
+
+            vim.keymap.set({ "n", "x" }, "<leader>or", function() return require("opencode").operator("@this ") end,
+                { expr = true, desc = "Add range to opencode" })
+            vim.keymap.set("n", "<leader>ol", function() return require("opencode").operator("@this ") .. "_" end,
+                { expr = true, desc = "Add line to opencode" })
+
+            vim.keymap.set("n", "<S-C-u>", function() require("opencode").command("session.half.page.up") end,
+                { desc = "opencode half page up" })
+            vim.keymap.set("n", "<S-C-d>", function() require("opencode").command("session.half.page.down") end,
+                { desc = "opencode half page down" })
+
+            -- You may want these if you stick with the opinionated "<C-a>" and "<C-x>" above — otherwise consider "<leader>o".
+            vim.keymap.set("n", "+", "<C-a>", { desc = "Increment", noremap = true })
+            vim.keymap.set("n", "-", "<C-x>", { desc = "Decrement", noremap = true })
+        end
     },
 
     {
