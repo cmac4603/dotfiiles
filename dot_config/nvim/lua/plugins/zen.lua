@@ -1,7 +1,7 @@
 return {
     "folke/zen-mode.nvim",
     opts = {
-        width = 140,
+        width = 200,
         plugins = {
             alacritty = {
                 enabled = false,
