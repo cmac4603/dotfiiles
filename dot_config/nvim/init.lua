@@ -1,5 +1,7 @@
 require("config.lazy")
 
+vim.loader.enable()
+
 TOGGLE_TELESCOPE = function(harpoon_files)
     -- telescope function for harpoon
     local conf = require("telescope.config").values
