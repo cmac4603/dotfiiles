@@ -42,11 +42,9 @@ return {
     },
 
     {
-        "cmac4603/gh-pr.nvim",
-        branch = "start",
-        config = function()
-            require("gh-pr").setup()
-        end,
+        "cmac4603/gh-pr-comments.nvim",
+        version = "0.0.2",
+        opts = {},
     },
 
     -- local dev plugin location (adder)
