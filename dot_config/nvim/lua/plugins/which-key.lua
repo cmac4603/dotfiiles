@@ -71,7 +71,7 @@ return {
             { '<leader>ga',  '<cmd>Pipeline<cr>',                                                   desc = 'Open GitHub Actions Pipelines' },
             { "<leader>gb",  "<CMD>BlameToggle window<CR>",                                         desc = "Git Blame Window" },
             { "<leader>gc",  "<CMD>GhPrComments<CR>",                                               desc = "Open GitHub PR Comments" },
-            { "<leader>gc",  "<CMD>GhPrCommentsClear<CR>",                                          desc = "Clear GitHub PR Comments" },
+            { "<leader>gC",  "<CMD>GhPrCommentsClear<CR>",                                          desc = "Clear GitHub PR Comments" },
             { "<leader>gdh", ":CodeDiff HEAD~",                                                     desc = "Open CodeDiff incl. last x commits" },
             { "<leader>gd1", "<CMD>CodeDiff HEAD~1<CR>",                                            desc = "Open CodeDiff incl. last 1 commits" },
             { "<leader>gd2", "<CMD>CodeDiff HEAD~2<CR>",                                            desc = "Open CodeDiff incl. last 2 commits" },
@@ -108,11 +108,11 @@ return {
 
         -- random assortment
         wk.add({
-            { "<leader>oo",  "<CMD>!tmux-sessionizer -s 0 --vsplit<CR>",    desc = "Open Opencode In New Tmux Pane" },
-            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                      desc = "Toggle CSV View" },
-            { "<leader>ht",  ":Hardtime toggle<CR>",                        desc = "Hardtime Toggle" },
-            { "<leader>l",   function() Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
-            { "<leader>z",   "<CMD>ZenMode<CR>",                            desc = "Zen Toggle" },
+            { "<leader>oo",  "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>", desc = "Open Opencode In New Tmux Pane" },
+            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                          desc = "Toggle CSV View" },
+            { "<leader>ht",  ":Hardtime toggle<CR>",                            desc = "Hardtime Toggle" },
+            { "<leader>l",   function() Snacks.notifier.show_history() end,     desc = "Show notification history (logs)" },
+            { "<leader>z",   "<CMD>ZenMode<CR>",                                desc = "Zen Toggle" },
         })
     end
 }
