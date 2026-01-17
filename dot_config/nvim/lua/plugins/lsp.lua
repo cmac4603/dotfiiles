@@ -94,4 +94,10 @@ return {
     -- vcl syntax highlighting support
     { "fgsch/vim-varnish", },
 
+    {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {},
+    },
+
 }

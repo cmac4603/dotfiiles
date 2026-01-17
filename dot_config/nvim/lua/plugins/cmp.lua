@@ -41,13 +41,19 @@ return {
             },
         },
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer' },
+            default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
             per_filetype = {
                 sql = { 'snippets', 'dadbod', 'buffer' },
             },
             -- add vim-dadbod-completion to your completion providers
             providers = {
                 dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+                lazydev = {
+                    name = "LazyDev",
+                    module = "lazydev.integrations.blink",
+                    -- make lazydev completions top priority (see `:h blink.cmp`)
+                    score_offset = 100,
+                },
             },
         },
         fuzzy = { implementation = "prefer_rust_with_warning" }
