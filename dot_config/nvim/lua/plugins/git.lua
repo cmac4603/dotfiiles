@@ -42,18 +42,16 @@ return {
     },
 
     {
-        "cmac4603/gh-pr-comments.nvim",
-        version = "0.0.2",
+        "https://tangled.org/cmac4603.dev/gh-pr-comments.nvim",
+        version = "0.0.3",
         opts = {},
     },
 
     -- local dev plugin location (adder)
     -- {
-    --     dir = "~/dev/repos/gh-pr.nvim.git/start",
-    --     name = "gh-pr",
-    --     config = function()
-    --         require("gh-pr").setup()
-    --     end,
+    --     dir = "~/dev/repos/gh-pr-comments.nvim.git/comments-in-scratch-buffer",
+    --     name = "gh-pr-comments",
+    --     opts = {},
     -- },
 
 }
