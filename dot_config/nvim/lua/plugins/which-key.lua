@@ -81,7 +81,6 @@ return {
             { "<leader>gdo", "<CMD>CodeDiff<CR>",                                                   desc = "Open CodeDiff" },
             { "<leader>gdr", ":CodeDiff ",                                                          desc = "Open CodeDiff by range/sha/two revisions" },
             { "<leader>gf",  "<CMD>AdvancedGitSearch<CR>",                                          desc = "Find Git Commits That Changed The Current File" },
-            { "<leader>gg",  function() Snacks.lazygit() end,                                       desc = "Lazygit" },
             { "<leader>go",  function() Snacks.gitbrowse() end,                                     desc = "Open Remote Git URL" },
             { "<leader>gp",  function() vim.fn.jobstart("gh pr view --web", { detach = true }) end, desc = "Open Github PR" },
         })

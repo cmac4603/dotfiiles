@@ -94,7 +94,6 @@ return {
         },
         indent = { enabled = true },
         gitbrowse = { enabled = true },
-        lazygit = { enabled = true },
         notifier = {
             enabled = true,
             timeout = 5000,
