@@ -43,7 +43,6 @@ return {
 
     {
         "https://tangled.org/cmac4603.dev/gh-pr-comments.nvim",
-        version = "0.0.3",
         opts = {},
     },
 
