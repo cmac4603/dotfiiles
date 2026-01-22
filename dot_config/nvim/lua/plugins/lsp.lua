@@ -95,6 +95,11 @@ return {
     { "fgsch/vim-varnish", },
 
     {
+        "iamkarasik/sonarqube.nvim",
+        opts = {},
+    },
+
+    {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
         opts = {},

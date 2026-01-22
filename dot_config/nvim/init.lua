@@ -52,6 +52,7 @@ require("mason-tool-installer").setup({
         "marksman",
         "protols",
         "ruff",
+        "sonarlint-language-server",
         "tailwindcss",
         "terraformls",
         "taplo",
@@ -80,6 +81,7 @@ vim.lsp.enable({
     "ruff",
     -- NOTE: allow rustaceanvim to setup
     -- "rust_analyzer",
+    "sonarlint-language-server",
     "taplo", -- toml
     "tailwindcss",
     -- TODO: reenable when ty gets better
@@ -218,6 +220,7 @@ vim.lsp.config("lua_ls", {
     },
 })
 
+-- PROTOBUF
 vim.lsp.config("protols", {})
 
 -- PYTHON
@@ -323,6 +326,9 @@ vim.g.rustaceanvim = function()
         tools = {},
     }
 end
+
+-- SONARQUBE
+vim.lsp.config("sonarlint-language-server", {})
 
 -- YAML
 vim.lsp.config("yamlls", {
