@@ -50,6 +50,7 @@ require("mason-tool-installer").setup({
         "jsonls",
         "lua_ls",
         "marksman",
+        "protols",
         "ruff",
         "tailwindcss",
         "terraformls",
@@ -75,6 +76,7 @@ vim.lsp.enable({
     -- "htmx",
     "jinja_lsp",
     "lua_ls",
+    "protols",
     "ruff",
     -- NOTE: allow rustaceanvim to setup
     -- "rust_analyzer",
@@ -215,6 +217,8 @@ vim.lsp.config("lua_ls", {
         },
     },
 })
+
+vim.lsp.config("protols", {})
 
 -- PYTHON
 vim.lsp.config("basedpyright", {
