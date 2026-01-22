@@ -20,7 +20,7 @@ return {
                         desc = "Harpoon",
                         action = function()
                             local harpoon = require("harpoon")
-                            TOGGLE_TELESCOPE(harpoon:list())
+                            require('config.telescope-config').toggle_telescope(harpoon:list())
                         end
                     },
                     { icon = " ", key = "s", desc = "Restore Session", section = "session" },

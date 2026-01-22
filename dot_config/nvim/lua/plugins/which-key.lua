@@ -51,19 +51,19 @@ return {
 
         wk.add({
             { "<leader>f",  group = "Find" },
-            { "<leader>fb", "<CMD>Telescope buffers<CR>",                                    desc = "Find buffers" },
-            { "<leader>fe", "<CMD>Telescope env<CR>",                                        desc = "Find environment variables" },
-            { "<leader>fg", "<CMD>AdvancedGitSearch diff_commit_file<CR>",                   desc = "Git diff commit file search" },
-            { "<leader>fh", function() TOGGLE_TELESCOPE(harpoon:list()) end,                 desc = "Find harpoons" },
-            { "<leader>fH", "<cmd>HTTPCodes<cr>",                                            desc = "Find HTTP codes" },
-            { "<leader>ff", "<CMD>lua require'config.telescope-config'.project_files()<CR>", desc = "Find files (default git_files, fallback find_files)" },
-            { "<leader>fk", "<CMD>Telescope keymaps<CR>",                                    desc = "Find keymaps" },
-            { "<leader>fn", "<CMD>ObsidianDailies<CR>",                                      desc = "Find obsidian dailies" },
-            { "<leader>fs", "<CMD>ScratchList<CR>",                                          desc = "Find scratch" },
-            { "<leader>ft", "<CMD>Telescope live_grep<CR>",                                  desc = "Find text" },
-            { "<leader>fT", "<CMD>Telescope toggleterm<CR>",                                 desc = "Find terminals" },
-            { "<leader>fw", "<CMD>Telescope grep_string<CR>",                                desc = "Find word under cursor" },
-            { "<leader>fy", "<CMD>Telescope neoclip<CR>",                                    desc = "Find yanks" },
+            { "<leader>fb", "<CMD>Telescope buffers<CR>",                                                       desc = "Find buffers" },
+            { "<leader>fe", "<CMD>Telescope env<CR>",                                                           desc = "Find environment variables" },
+            { "<leader>fg", "<CMD>AdvancedGitSearch diff_commit_file<CR>",                                      desc = "Git diff commit file search" },
+            { "<leader>fh", function() require('config.telescope-config').toggle_telescope(harpoon:list()) end, desc = "Find harpoons" },
+            { "<leader>fH", "<cmd>HTTPCodes<cr>",                                                               desc = "Find HTTP codes" },
+            { "<leader>ff", "<CMD>lua require'config.telescope-config'.project_files()<CR>",                    desc = "Find files (default git_files, fallback find_files)" },
+            { "<leader>fk", "<CMD>Telescope keymaps<CR>",                                                       desc = "Find keymaps" },
+            { "<leader>fn", "<CMD>ObsidianDailies<CR>",                                                         desc = "Find obsidian dailies" },
+            { "<leader>fs", "<CMD>ScratchList<CR>",                                                             desc = "Find scratch" },
+            { "<leader>ft", "<CMD>Telescope live_grep<CR>",                                                     desc = "Find text" },
+            { "<leader>fT", "<CMD>Telescope toggleterm<CR>",                                                    desc = "Find terminals" },
+            { "<leader>fw", "<CMD>Telescope grep_string<CR>",                                                   desc = "Find word under cursor" },
+            { "<leader>fy", "<CMD>Telescope neoclip<CR>",                                                       desc = "Find yanks" },
         })
 
         wk.add({
