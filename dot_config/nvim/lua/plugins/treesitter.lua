@@ -1,22 +1,42 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        lazy = false,
         branch = "main",
         build = ":TSUpdate",
+        config = function()
+            require("config.treesitter").install_default_parsers()
+        end
+    },
+
+    {
+        -- simple Neovim plugin that provides automatic installation
+        -- for the new rewrite of nvim-treesitter
+        "mks-h/treesitter-autoinstall.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
         opts = {
-            ensure_installed = "all",        -- one of "all" or a list of languages
-            ignore_install = { "ipkg" },     -- List of parsers to ignore installing
-            sync_install = false,            -- install languages synchronously (only applied to `ensure_installed`)
-            autopairs = {
-                enable = true,
+            highlight = true,
+            ignore = {
+                "blink-cmp-documentation",
+                "blink-cmp-menu",
+                "codecompanion",
+                "checkhealth",
+                "oil",
+                "snacks_dashboard",
+                "snacks_notif",
+                "TelescopeResults",
+                "TelescopePrompt",
+                "toggleterm",
             },
         },
     },
+
     "nvim-treesitter/nvim-treesitter-context",
+
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
         branch = "main",
     },
+
     "JoosepAlviste/nvim-ts-context-commentstring",
+
 }

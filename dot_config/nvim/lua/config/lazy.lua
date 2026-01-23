@@ -212,9 +212,6 @@ keymap("n", "<leader>j", ":b#<CR>", opts)
 -- neotree toggle
 keymap("n", "<leader>n", ":Neotree toggle<CR>", opts)
 
--- enable treesitter highlighting
-keymap("n", "<leader>i", ":TSBufEnable highlight<CR>", opts)
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
