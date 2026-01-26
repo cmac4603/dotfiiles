@@ -47,8 +47,8 @@ return {
         formatters_by_ft = {
             css = { "stylelint" },
             go = { "goimports", "gofmt" },
-            html = { "djlint" },
-            javascript = { "prettierd", "prettier", stop_after_first = true },
+            html = { "biome" },
+            javascript = { "biome" },
             json = { "biome" },
             lua = { "stylua" },
             markdown = { "markdownlint" },
@@ -63,6 +63,7 @@ return {
             },
             terraform = { "terraform_fmt" },
             toml = { "taplo" },
+            typescript = { "biome" },
             yaml = { "yamllint" },
             xml = { "xmlformatter" },
             ["*"] = { "trim_whitespace", "trim_newlines" },
