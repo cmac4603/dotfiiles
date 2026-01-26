@@ -97,6 +97,7 @@ return {
     {
         "iamkarasik/sonarqube.nvim",
         opts = {},
+        -- use :SonarQubeInstallLsp to install
     },
 
     {
