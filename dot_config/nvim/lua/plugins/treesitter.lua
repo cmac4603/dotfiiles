@@ -27,6 +27,7 @@ return {
                 "TelescopeResults",
                 "TelescopePrompt",
                 "toggleterm",
+                "qf",
             },
         },
     },
