@@ -20,6 +20,7 @@ return {
                 "blink-cmp-menu",
                 "codecompanion",
                 "checkhealth",
+                "lazy",
                 "oil",
                 "snacks_dashboard",
                 "snacks_notif",
