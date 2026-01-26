@@ -37,6 +37,7 @@ return {
                 "TelescopePrompt",
                 "TelescopeResults",
                 "toggleterm",
+                "trouble",
             },
         },
     },
