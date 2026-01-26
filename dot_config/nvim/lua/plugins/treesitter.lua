@@ -23,6 +23,7 @@ return {
                 "lazy",
                 "lazy_backdrop",
                 "mason",
+                "mason_backdrop",
                 "oil",
                 "qf",
                 "snacks_dashboard",
