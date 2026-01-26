@@ -12,7 +12,12 @@ return {
         -- simple Neovim plugin that provides automatic installation
         -- for the new rewrite of nvim-treesitter
         "mks-h/treesitter-autoinstall.nvim",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        dependencies = {
+            {
+                "nvim-treesitter/nvim-treesitter",
+                branch = "main",
+            },
+        },
         opts = {
             highlight = true,
             ignore = {

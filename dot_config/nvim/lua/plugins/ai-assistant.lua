@@ -5,7 +5,10 @@ return {
         version = "v17.33.0",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
+            {
+                "nvim-treesitter/nvim-treesitter",
+                branch = "main",
+            },
             {
                 "franco-ruggeri/codecompanion-spinner.nvim",
                 opts = {},
