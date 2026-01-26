@@ -21,6 +21,7 @@ return {
                 "checkhealth",
                 "codecompanion",
                 "lazy",
+                "lazy_backdrop",
                 "mason",
                 "oil",
                 "qf",
