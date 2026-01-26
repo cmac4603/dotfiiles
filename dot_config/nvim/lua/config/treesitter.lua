@@ -54,6 +54,7 @@ M.install_default_parsers = function()
         "tsv",
         "typescript",
         "vimdoc",
+        "yaml",
     }
 end
 
