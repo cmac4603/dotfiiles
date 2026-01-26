@@ -49,7 +49,7 @@ return {
             go = { "goimports", "gofmt" },
             html = { "djlint" },
             javascript = { "prettierd", "prettier", stop_after_first = true },
-            json = { "jq" },
+            json = { "biome" },
             lua = { "stylua" },
             markdown = { "markdownlint" },
             postgresql = { "pg_format" },
