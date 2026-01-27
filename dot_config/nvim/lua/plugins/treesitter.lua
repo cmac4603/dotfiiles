@@ -31,6 +31,7 @@ return {
                 "mason_backdrop",
                 "mason",
                 "oil",
+                "oil_preview",
                 "qf",
                 "snacks_dashboard",
                 "snacks_notif",
