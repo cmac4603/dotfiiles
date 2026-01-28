@@ -39,6 +39,7 @@ return {
                 "TelescopeResults",
                 "toggleterm",
                 "trouble",
+                "vcl",
                 "yaml.jinja",
             },
         },
