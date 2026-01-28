@@ -21,6 +21,7 @@ return {
         opts = {
             highlight = true,
             ignore = {
+                "bigfile",
                 "blink-cmp-documentation",
                 "blink-cmp-menu",
                 "checkhealth",
