@@ -54,6 +54,7 @@ vim.lsp.enable({
     "tailwindcss",
     -- TODO: reenable when ty gets better
     -- "ty",
+    "yamlls",
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {

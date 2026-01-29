@@ -54,6 +54,7 @@ return {
             { "<leader>fb", "<CMD>Telescope buffers<CR>",                                                       desc = "Find buffers" },
             { "<leader>fe", "<CMD>Telescope env<CR>",                                                           desc = "Find environment variables" },
             { "<leader>fg", "<CMD>AdvancedGitSearch diff_commit_file<CR>",                                      desc = "Git diff commit file search" },
+            { "<leader>fG", "<CMD>AdvancedGitSearch search_log_content<CR>",                                    desc = "Search in repo log content" },
             { "<leader>fh", function() require('config.telescope-config').toggle_telescope(harpoon:list()) end, desc = "Find harpoons" },
             { "<leader>fH", "<cmd>HTTPCodes<cr>",                                                               desc = "Find HTTP codes" },
             { "<leader>ff", "<CMD>lua require'config.telescope-config'.project_files()<CR>",                    desc = "Find files (default git_files, fallback find_files)" },
@@ -107,6 +108,7 @@ return {
 
         -- random assortment
         wk.add({
+            { "<leader>yp",  "<CMD>CopyRelPath<CR>",                            desc = "Copy the relative filepath to system clipboard" },
             { "<leader>oo",  "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>", desc = "Open Opencode In New Tmux Pane" },
             { "<leader>csv", "<CMD>CsvViewToggle<CR>",                          desc = "Toggle CSV View" },
             { "<leader>ht",  ":Hardtime toggle<CR>",                            desc = "Hardtime Toggle" },
