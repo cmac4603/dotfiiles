@@ -22,6 +22,7 @@ return {
             highlight = true,
             ignore = {
                 "bigfile",
+                "blame",
                 "blink-cmp-documentation",
                 "blink-cmp-menu",
                 "checkhealth",
