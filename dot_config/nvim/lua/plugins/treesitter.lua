@@ -27,6 +27,7 @@ return {
                 "blink-cmp-menu",
                 "checkhealth",
                 "codecompanion",
+                "conf",
                 "harpoon",
                 "lazy_backdrop",
                 "lazy",
