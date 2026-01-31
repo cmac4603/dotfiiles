@@ -7,6 +7,7 @@ require("mason-tool-installer").setup({
     ensure_installed = {
         "bacon_ls",
         "basedpyright",
+        "biome",
         "cpptools",
         "codelldb",
         "cspell-lsp",

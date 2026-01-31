@@ -3,9 +3,14 @@
     "theme": "tokyonight",
     "share": "manual",
     "autoupdate": true,
-    "disabled_providers": [
-        "openai"
-    ],
+    "disabled_providers": ["openai"],
+    "provider": {
+        "google": {
+            "options": {
+                "projectId": "gen-lang-client-0222096719"
+            }
+        }
+    },
     "permission": {
         "edit": "ask",
         "bash": "ask"
@@ -13,12 +18,7 @@
     "mcp": {
         "bigquery": {
             "type": "local",
-            "command": [
-                "toolbox",
-                "--prebuilt",
-                "bigquery",
-                "--stdio"
-            ],
+            "command": ["toolbox", "--prebuilt", "bigquery", "--stdio"],
             "environment": {
                 "BIGQUERY_PROJECT": "hdm-mediaos-fastly-logs"
             }
