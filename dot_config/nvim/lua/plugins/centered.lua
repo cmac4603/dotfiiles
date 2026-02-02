@@ -13,6 +13,11 @@ return {
             "oil_preview",
             "oil",
             "qf",
+            "snacks_dashboard",
+            "snacks_notif",
+            "TelescopePrompt",
+            "TelescopeResults",
+            "toggleterm",
         },
     }
 }

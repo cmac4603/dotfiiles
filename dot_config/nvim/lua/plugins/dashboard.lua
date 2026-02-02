@@ -10,7 +10,7 @@ return {
             enabled = true,
             preset = {
                 keys = {
-                    { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
+                    { icon = " ", key = "f", desc = "Find File", action = ":lua require'config.telescope-config'.project_files()" },
                     { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                     { icon = " ", key = "t", desc = "Find Text", action = ":Telescope live_grep" },
                     { icon = " ", key = "g", desc = "Search Git", action = ":AdvancedGitSearch" },
