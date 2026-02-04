@@ -46,6 +46,7 @@ return {
     opts = {
         formatters_by_ft = {
             css = { "stylelint" },
+            gitcommit = { "commitmsgfmt" },
             go = { "goimports", "gofmt" },
             html = { "biome" },
             javascript = { "biome" },
