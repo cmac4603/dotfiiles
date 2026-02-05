@@ -10,7 +10,7 @@ return {
             enabled = true,
             preset = {
                 keys = {
-                    { icon = " ", key = "f", desc = "Find File", action = ":lua require'config.telescope-config'.project_files()" },
+                    { icon = " ", key = "f", desc = "Find File", action = ":lua require'config.telescope'.project_files()" },
                     { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                     { icon = " ", key = "t", desc = "Find Text", action = ":Telescope live_grep" },
                     { icon = " ", key = "g", desc = "Search Git", action = ":AdvancedGitSearch" },
@@ -20,7 +20,7 @@ return {
                         desc = "Harpoon",
                         action = function()
                             local harpoon = require("harpoon")
-                            require('config.telescope-config').toggle_telescope(harpoon:list())
+                            require('config.telescope').toggle_telescope(harpoon:list())
                         end
                     },
                     { icon = " ", key = "s", desc = "Restore Session", section = "session" },
