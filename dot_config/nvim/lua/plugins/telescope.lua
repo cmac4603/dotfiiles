@@ -86,7 +86,11 @@ return {
     },
     {
         "barrett-ruth/http-codes.nvim",
-        config = true,
+        config = function ()
+            vim.g.http_codes = {
+                use = "telescope",
+            }
+        end,
     },
     {
         "LinArcX/telescope-env.nvim",

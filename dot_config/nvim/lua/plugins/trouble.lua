@@ -1,4 +1,3 @@
--- TODO: https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#trouble
 return {
     "folke/trouble.nvim",
     opts = {
@@ -7,6 +6,17 @@ return {
         auto_preview = true,
         use_diagnostic_signs = true,
         modes = {
+            diagnostics = {
+                win = {
+                    size = 0.3,
+                },
+                preview = {
+                    type = "split",
+                    relative = "win",
+                    position = "right",
+                    size = 0.5,
+                },
+            },
             preview_float = {
                 mode = "diagnostics",
                 preview = {
@@ -18,15 +28,6 @@ return {
                     position = { 0, -2 },
                     size = { width = 0.3, height = 0.3 },
                     zindex = 200,
-                },
-            },
-            test = {
-                mode = "diagnostics",
-                preview = {
-                    type = "split",
-                    relative = "win",
-                    position = "right",
-                    size = 0.3,
                 },
             },
             lsp = {
@@ -47,24 +48,9 @@ return {
             desc = "Buffer Diagnostics (Trouble)",
         },
         {
-            "<leader>ts",
-            "<cmd>Trouble symbols toggle focus=false<cr>",
-            desc = "Symbols (Trouble)",
-        },
-        {
-            "<leader>tl",
-            "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-            desc = "LSP Definitions / references / ... (Trouble)",
-        },
-        {
-            "<leader>tL",
-            "<cmd>Trouble loclist toggle<cr>",
-            desc = "Location List (Trouble)",
-        },
-        {
-            "<leader>tQ",
-            "<cmd>Trouble qflist toggle<cr>",
-            desc = "Quickfix List (Trouble)",
+            "<leader>tp",
+            "<cmd>Trouble preview_float toggle<cr>",
+            desc = "Diagnostics Preview (Trouble)",
         },
     },
 }

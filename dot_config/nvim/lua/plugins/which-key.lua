@@ -52,6 +52,7 @@ return {
         wk.add({
             { "<leader>f",  group = "Find" },
             { "<leader>fb", "<CMD>Telescope buffers<CR>",                                                       desc = "Find buffers" },
+            { "<leader>fc", "<CMD>TodoTelescope<CR>",                                                           desc = "Find TODO comments" },
             { "<leader>fe", "<CMD>Telescope env<CR>",                                                           desc = "Find environment variables" },
             { "<leader>fg", "<CMD>AdvancedGitSearch diff_commit_file<CR>",                                      desc = "Git diff commit file search" },
             { "<leader>fG", "<CMD>AdvancedGitSearch search_log_content<CR>",                                    desc = "Search in repo log content" },
