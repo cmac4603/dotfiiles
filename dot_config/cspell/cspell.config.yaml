@@ -32,6 +32,7 @@ words:
   - keymap
   - kopf
   - kubeprod
+  - lsp
   - noremap
   - nvim
   - opencode
@@ -42,3 +43,4 @@ words:
   - taplo
   - venv
   - yamlls
+  - zindex
