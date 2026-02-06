@@ -1,93 +1,108 @@
-@import "../omarchy/current/theme/waybar.css";
-
+/* -----------------------------------------------------
+   Global Reset
+   ----------------------------------------------------- */
 * {
-  background-color: @background;
-  color: @foreground;
-
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  font-family: 'CaskaydiaMono Nerd Font';
-  font-size: 12px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
 }
 
-.modules-left {
-  margin-left: 8px;
+/* -----------------------------------------------------
+   Main Bar Window
+   ----------------------------------------------------- */
+window#waybar {
+    background-color: #11111b;
+    color: #cdd6f4;
+    border-bottom: 2px solid #fab387;
 }
 
-.modules-right {
-  margin-right: 8px;
-}
-
+/* -----------------------------------------------------
+   Workspaces
+   ----------------------------------------------------- */
 #workspaces button {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
+    padding: 0 10px;
+    color: #6c7086;
+    background: transparent;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
 }
 
-#workspaces button.empty {
-  opacity: 0.5;
+#workspaces button.active {
+    color: #fab387; /* Peach Active */
+    border-bottom: 3px solid #fab387;
+    background: rgba(250, 179, 135, 0.1);
 }
 
-#cpu,
-#battery,
+/* -----------------------------------------------------
+   Module Styling
+   ----------------------------------------------------- */
+#custom-arch { color: #89b4fa; padding: 0 15px; font-size: 18px; }
+#custom-window_info { color: #b4befe; font-weight: bold; padding: 0 8px; }
+
+/* -----------------------------------------------------
+   Modules (Clock, Audio, Network, etc.)
+   ----------------------------------------------------- */
+#clock,
 #pulseaudio,
-#custom-omarchy,
-#custom-screenrecording-indicator,
-#custom-update {
-  min-width: 12px;
-  margin: 0 7.5px;
+#network,
+#custom-weather,
+#battery {
+    padding: 0 10px;
+    margin: 4px 2px; /* Adds space between modules */
+    border-radius: 10px; /* ROUNDNESS FIX for hover effects */
+    transition: background 0.3s ease;
 }
 
-#tray {
-  margin-right: 16px;
+/* Add a subtle hover effect to these text modules */
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#custom-weather:hover,
+#battery:hover {
+    background: rgba(88, 91, 112, 0.3);
 }
 
-#bluetooth {
-  margin-right: 17px;
+/* Specific Colors */
+#clock { color: #cba6f7; font-weight: bold; }
+#custom-weather { color: #94e2d5; }
+#pulseaudio { color: #a6e3a1; }
+#network { color: #89dceb; }
+
+/* -----------------------------------------------------
+   System Module (The "Pill")
+   ----------------------------------------------------- */
+#custom-system {
+    color: #cdd6f4;
+    background: rgba(49, 50, 68, 0.5);
+    border-radius: 12px; /* Increased Roundness */
+    margin: 4px 4px;
+    padding: 0 12px;
 }
 
-#network {
-  margin-right: 13px;
+/* -----------------------------------------------------
+   Battery States
+   ----------------------------------------------------- */
+#battery { color: #f9e2af; }
+
+#battery.charging, #battery.plugged {
+    color: #a6e3a1;
 }
 
-#custom-expand-icon {
-  margin-right: 18px;
+#battery.critical:not(.charging) {
+    color: #f38ba8;
 }
 
+/* -----------------------------------------------------
+   TOOLTIPS (The Main Fix)
+   ----------------------------------------------------- */
 tooltip {
-  padding: 2px;
+    background: #11111b;
+    border: 2px solid #fab387; /* Peach Border */
+    border-radius: 08px; /* FIX: Smoother, rounder corners */
 }
 
-#custom-update {
-  font-size: 10px;
-}
-
-#clock {
-  margin-left: 5px;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 5px;
-  font-size: 10px;
-  padding-bottom: 1px;
-}
-
-#custom-screenrecording-indicator.active {
-  color: #a55555;
-}
-
-#custom-voxtype {
-  min-width: 12px;
-  margin: 0 0 0 7.5px;
-}
-
-#custom-voxtype.recording {
-  color: #a55555;
+tooltip label {
+    font-family: "JetBrainsMono Nerd Font";
+    padding: 16px; /* More breathing room */
 }
