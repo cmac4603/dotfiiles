@@ -111,10 +111,6 @@ return {
                 },
             })
 
-            vim.keymap.set("n", "<leader>af", function()
-                _99.fill_in_function()
-            end)
-
             vim.keymap.set("v", "<leader>av", function()
                 _99.visual()
             end)
