@@ -16,13 +16,14 @@ return {
 
         wk.add({
             { "<leader>a",  group = "AI" },
-            { "<leader>aa", "<CMD>CodeCompanionActions<CR>",     desc = "Actions",             mode = { "n", "v" } },
-            { "<leader>ae", "<CMD>CodeCompanion /explain<CR>",   desc = "Explain Code",        mode = { "n", "v" } },
-            { "<leader>ac", "<CMD>CodeCompanionChat<CR>",        desc = "Open Chat" },
-            { "<leader>ag", "<CMD>CodeCompanion /commit<CR>",    desc = "Commit Message" },
-            { "<leader>am", "<CMD>MCPHub<CR>",                   desc = "Open MCPHub",         mode = { "n" } },
-            { "<leader>at", "<CMD>CodeCompanionChat Toggle<CR>", desc = "Toggle" },
-            { "<leader>au", "<CMD>CodeCompanion /unittests<CR>", desc = "Generate Unit Tests", mode = { "n", "v" } },
+            { "<leader>aa", "<CMD>CodeCompanionActions<CR>",                   desc = "Actions",             mode = { "n", "v" } },
+            { "<leader>ac", "<CMD>CodeCompanionChat<CR>",                      desc = "Open Chat" },
+            { "<leader>ae", "<CMD>CodeCompanion /explain<CR>",                 desc = "Explain Code",        mode = { "n", "v" } },
+            { "<leader>ag", "<CMD>CodeCompanion /commit<CR>",                  desc = "Commit Message" },
+            { "<leader>am", "<CMD>MCPHub<CR>",                                 desc = "Open MCPHub",         mode = { "n" } },
+            { "<leader>at", "<CMD>CodeCompanionChat Toggle<CR>",               desc = "Toggle" },
+            { "<leader>au", "<CMD>CodeCompanion /unittests<CR>",               desc = "Generate Unit Tests", mode = { "n", "v" } },
+            { "<leader>ao", "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>", desc = "Open Opencode" },
         })
 
         wk.add({
@@ -111,12 +112,11 @@ return {
 
         -- random assortment
         wk.add({
-            { "<leader>yp",  "<CMD>CopyRelPath<CR>",                            desc = "Copy the relative filepath to system clipboard" },
-            { "<leader>oo",  "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>", desc = "Open Opencode In New Tmux Pane" },
-            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                          desc = "Toggle CSV View" },
-            { "<leader>ht",  ":Hardtime toggle<CR>",                            desc = "Hardtime Toggle" },
-            { "<leader>l",   function() Snacks.notifier.show_history() end,     desc = "Show notification history (logs)" },
-            { "<leader>z",   "<CMD>ZenMode<CR>",                                desc = "Zen Toggle" },
+            { "<leader>yp",  "<CMD>CopyRelPath<CR>",                        desc = "Copy the relative filepath to system clipboard" },
+            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                      desc = "Toggle CSV View" },
+            { "<leader>ht",  ":Hardtime toggle<CR>",                        desc = "Hardtime Toggle" },
+            { "<leader>l",   function() Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
+            { "<leader>z",   "<CMD>ZenMode<CR>",                            desc = "Zen Toggle" },
         })
     end
 }

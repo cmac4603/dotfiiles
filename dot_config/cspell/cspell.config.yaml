@@ -24,7 +24,9 @@ words:
   - gopls
   - hearstapps
   - hikaru
+  - hostnames
   - htmx
+  - httproute
   - igoringress
   - imdb
   - ingressversion
