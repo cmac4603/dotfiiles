@@ -112,10 +112,11 @@ return {
 
         -- random assortment
         wk.add({
-            { "<leader>yp",  "<CMD>CopyRelPath<CR>",                        desc = "Copy the relative filepath to system clipboard" },
             { "<leader>csv", "<CMD>CsvViewToggle<CR>",                      desc = "Toggle CSV View" },
             { "<leader>ht",  ":Hardtime toggle<CR>",                        desc = "Hardtime Toggle" },
             { "<leader>l",   function() Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
+            { "<leader>s",   ":Silicon<CR>",                             desc = "Sceenshot selected code",                       mode = { "v" } },
+            { "<leader>yp",  "<CMD>CopyRelPath<CR>",                        desc = "Copy the relative filepath to system clipboard" },
             { "<leader>z",   "<CMD>ZenMode<CR>",                            desc = "Zen Toggle" },
         })
     end
