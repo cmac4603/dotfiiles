@@ -17,6 +17,7 @@ return {
             { name = 'rover-db-kubefeature-readonly', url = 'postgres://postgres@localhost:10185/mediaos' },
             { name = 'bam-db-sharedapps-readonly',    url = 'postgres://postgres@localhost:10253/bam' },
             { name = 'bam-db-sharedapps',             url = 'postgres://postgres@localhost:15444/bam' },
+            { name = 'collector-db-sem3stage',        url = 'postgres://postgres@localhost:35093/collector' },
         }
     end,
 }
