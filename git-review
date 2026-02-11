@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# Review git branch in a subshell, vim+fugitive command included
+
+# USAGE: git review <branch> [base]
+#        (base defaults to origin/master)
+
+# Combine with completion:
+#     _git_review () { __git_complete_refs --mode=heads; }
+
+# Start a subshell so that declared functions can be dropped by `exit`
+(
+    set -e
+    YELLOW="\e[33m"
+    RESET="\e[0m"
+    export branch="${1#origin/}"
+    export base="${2:-origin/master}"
+    export base_short="${base#*/}"
+
+
+    # update default branch
+    cd $base_short
+    git pull
+    cd ..
+
+    # move to dedicated review worktree, creating it if needed
+    if [ ! -d "review" ]; then
+        git worktree add review
+    fi
+    cd review
+
+    echo -e "Reviewing branch $YELLOW$branch$RESET to be merged to $base"
+
+    git fetch origin $branch:refs/remotes/origin/$branch
+    git switch -d "origin/$branch"    # avoid local copy of branch
+
+    echo    "-----------------------------------------------------"
+    d() { git diff --merge-base $base_short --stat $@ ; }
+    l() { git log "$base_short..HEAD" --oneline $@ ; }
+    n() { nvim $@ ; }
+    r() { nvim -c "GcLog $base_short..HEAD" -c clast $@ ; }
+
+    l  # display log
+
+    declare -fx d l n r
+
+    echo "Available variables:"
+    echo "  \$branch = $branch"
+    echo "  \$base   = $base"
+    echo "  \$base_short   = $base_short"
+    echo "Available functions:"
+    echo "  (l)og  : git log \"\$base_short..HEAD\" --oneline"
+    echo "  (d)iff : git diff --merge-base $base --stat"
+    echo "  (n)vim : view in nvim"
+    echo "  (r)eview in nvim (requires fugitive plugin)"
+
+    # Switch to interactive mode
+    exec bash -i
+)
