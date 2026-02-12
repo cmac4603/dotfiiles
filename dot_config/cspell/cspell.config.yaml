@@ -27,11 +27,13 @@ words:
   - hostnames
   - htmx
   - httproute
+  - hypr
   - igoringress
   - imdb
   - ingressversion
   - ingressversions
   - jsonls
+  - keybinds
   - keymap
   - kopf
   - kubeprod
