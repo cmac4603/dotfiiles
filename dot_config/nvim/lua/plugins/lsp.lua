@@ -66,7 +66,7 @@ return {
         "saecki/crates.nvim",
         tag = "stable",
         config = function()
-            require("crates").setup()
+            require("crates").setup({})
         end,
     },
 
@@ -93,12 +93,6 @@ return {
 
     -- vcl syntax highlighting support
     { "fgsch/vim-varnish", },
-
-    {
-        "iamkarasik/sonarqube.nvim",
-        opts = {},
-        -- use :SonarQubeInstallLsp to install
-    },
 
     {
         "folke/lazydev.nvim",
