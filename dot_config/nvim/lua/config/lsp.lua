@@ -37,7 +37,7 @@ vim.lsp.enable({
     "basedpyright",
     "cpptools",
     "codelldb",
-    "cspell_lsp",
+    -- "cspell_lsp",
     "cssls",
     "djlint",
     "dockerls",
