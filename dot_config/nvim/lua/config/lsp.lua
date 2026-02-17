@@ -241,23 +241,17 @@ vim.lsp.config("protols", {})
 
 -- PYTHON
 vim.lsp.config("basedpyright", {
-    -- NOTE: may not be needed when this feature is released (up top)
-    -- capabilities = {
-    --     textDocument = {
-    --         onTypeFormatting = {
-    --             dynamicRegistration = true,
-    --         },
-    --     },
-    -- },
     settings = {
         basedpyright = {
-            diagnosticMode = "openFilesOnly",
+            analysis = {
+                typeCheckingMode = "recommended",
+                diagnosticMode = "openFilesOnly",
+                inlayHints = {
+                    callArgumentNames = true
+                },
+            },
             -- Using Ruff's import organizer
             disableOrganizeImports = true,
-            typeCheckingMode = "recommended",
-            inlayHints = {
-                callArgumentNames = true,
-            },
         },
         python = {
             analysis = {
