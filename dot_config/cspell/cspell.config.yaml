@@ -27,6 +27,7 @@ words:
   - hostnames
   - htmx
   - httproute
+  - httprouteversion
   - hypr
   - igoringress
   - imdb
@@ -36,6 +37,7 @@ words:
   - keybinds
   - keymap
   - kopf
+  - kubefeature
   - kubeprod
   - lsp
   - noremap
