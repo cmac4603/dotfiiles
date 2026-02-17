@@ -1,6 +1,8 @@
 -- NOTE: add when this is released in newer nvim
 -- vim.lsp.on_type_formatting.enable()
 
+vim.diagnostic.config({ virtual_text = false })
+
 require("mason").setup()
 require("mason-tool-installer").setup({
     auto_update = true,
@@ -82,30 +84,30 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 local function rename_file()
-  local old = vim.api.nvim_buf_get_name(0)
-  if old == "" then return end
+    local old = vim.api.nvim_buf_get_name(0)
+    if old == "" then return end
 
-  vim.ui.input({ prompt = "New path: ", default = old }, function(new)
-    if not new or new == "" or new == old then return end
+    vim.ui.input({ prompt = "New path: ", default = old }, function(new)
+        if not new or new == "" or new == old then return end
 
-    vim.fn.mkdir(vim.fn.fnamemodify(new, ":h"), "p")
-    vim.cmd("silent! write")            -- save current
-    vim.fn.rename(old, new)             -- rename on disk
-    vim.cmd("edit " .. vim.fn.fnameescape(new))
-    vim.cmd("silent! bwipeout " .. vim.fn.fnameescape(old))
+        vim.fn.mkdir(vim.fn.fnamemodify(new, ":h"), "p")
+        vim.cmd("silent! write") -- save current
+        vim.fn.rename(old, new)  -- rename on disk
+        vim.cmd("edit " .. vim.fn.fnameescape(new))
+        vim.cmd("silent! bwipeout " .. vim.fn.fnameescape(old))
 
-    -- tell LSP (updates imports/references if supported)
-    for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
-      if client.supports_method("workspace/willRenameFiles") then
-        client.request("workspace/willRenameFiles", {
-          files = { { oldUri = vim.uri_from_fname(old), newUri = vim.uri_from_fname(new) } },
-        }, function(_, res)
-          if res then vim.lsp.util.apply_workspace_edit(res, client.offset_encoding) end
-          vim.cmd("silent! wall") -- save any edited files
-        end, 0)
-      end
-    end
-  end)
+        -- tell LSP (updates imports/references if supported)
+        for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+            if client.supports_method("workspace/willRenameFiles") then
+                client.request("workspace/willRenameFiles", {
+                    files = { { oldUri = vim.uri_from_fname(old), newUri = vim.uri_from_fname(new) } },
+                }, function(_, res)
+                    if res then vim.lsp.util.apply_workspace_edit(res, client.offset_encoding) end
+                    vim.cmd("silent! wall") -- save any edited files
+                end, 0)
+            end
+        end
+    end)
 end
 
 vim.keymap.set("n", "<leader>rf", rename_file, { desc = "Rename file (notify LSP)" })
@@ -113,15 +115,15 @@ vim.keymap.set("n", "<leader>rf", rename_file, { desc = "Rename file (notify LSP
 
 -- write all modified buffers after a rename
 vim.api.nvim_create_autocmd("User", {
-  pattern = "LspNotify",
-  callback = function(args)
-    local info = args.data or {}
-    if info.method == "textDocument/rename" then
-      vim.schedule(function()
-        vim.cmd("silent! wall") -- write all changed buffers (including other files)
-      end)
-    end
-  end,
+    pattern = "LspNotify",
+    callback = function(args)
+        local info = args.data or {}
+        if info.method == "textDocument/rename" then
+            vim.schedule(function()
+                vim.cmd("silent! wall") -- write all changed buffers (including other files)
+            end)
+        end
+    end,
 })
 
 
@@ -249,11 +251,13 @@ vim.lsp.config("basedpyright", {
     -- },
     settings = {
         basedpyright = {
+            diagnosticMode = "openFilesOnly",
             -- Using Ruff's import organizer
             disableOrganizeImports = true,
-            -- investigate slowdown
-            reportImportCycles = false,
             typeCheckingMode = "recommended",
+            inlayHints = {
+                callArgumentNames = true,
+            },
         },
         python = {
             analysis = {
