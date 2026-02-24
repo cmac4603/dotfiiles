@@ -12,6 +12,7 @@ words:
   - Cfgs
   - cmac
   - codelldb
+  - cookiecutter
   - dockerls
   - elif
   - endfor
