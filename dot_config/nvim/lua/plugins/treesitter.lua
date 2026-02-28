@@ -29,7 +29,6 @@ return {
                 "codecompanion",
                 "conf",
                 "harpoon",
-                "hyprlang",
                 "lazy_backdrop",
                 "lazy",
                 "mason_backdrop",
