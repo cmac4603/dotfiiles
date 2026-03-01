@@ -125,15 +125,8 @@ fish_add_path /home/cmac/.opencode/bin
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/cmac/google-cloud-sdk/path.fish.inc' ]; . '/home/cmac/google-cloud-sdk/path.fish.inc'; end
 {{- end }}
-{{ if eq .chezmoi.hostname "omarchy-adder" }}
-if status is-interactive
-  mise activate fish | source
-else
-  mise activate fish --shims | source
-end
-
-# opencode
-fish_add_path /home/cmac4603/.opencode/bin
+{{ if eq .chezmoi.hostname "adder" }}
+fish_add_path $HOME/.rd/bin
 {{- end }}
 
 zoxide init fish | source
