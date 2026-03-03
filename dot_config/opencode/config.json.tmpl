@@ -33,12 +33,23 @@
                 "http://localhost:12345"
             ]
         },
+        "context7": {
+            "type": "local",
+            "command": [
+                "npx",
+                "-y",
+                "@upstash/context7-mcp",
+                "--api-key",
+                "{{ .context7_api_key }}"
+            ],
+            "enabled": true
+        },
         "sentry": {
             "type": "local",
             "command": [
                 "npx",
                 "mcp-remote@latest",
-                "https://mcp.sentry.dev/sse"
+                "https://mcp.sentry.dev/mcp"
             ]
         }
     }
