@@ -23,6 +23,7 @@ require("mason-tool-installer").setup({
         "jsonls",
         "lua_ls",
         "marksman",
+        "markdownlint",
         "protols",
         "ruff",
         "tailwindcss",
