@@ -52,7 +52,7 @@ return {
             javascript = { "eslint_d" },
             json = { "biome" },
             lua = { "stylua" },
-            markdown = { "markdownlint", "markdownfmt" },
+            markdown = { "markdownlint" },
             postgresql = { "pg_format" },
             python = {
                 -- To fix auto-fixable lint errors.
