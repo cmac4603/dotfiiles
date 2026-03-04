@@ -127,6 +127,7 @@ if [ -f '/home/cmac/google-cloud-sdk/path.fish.inc' ]; . '/home/cmac/google-clou
 {{- end }}
 {{ if eq .chezmoi.hostname "adder" }}
 fish_add_path $HOME/.rd/bin
+fish_add_path $HOME/.local/share/fnm
 {{- end }}
 
 zoxide init fish | source
