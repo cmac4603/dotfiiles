@@ -1,6 +1,7 @@
 require("config.lazy")
 require("config.lsp")
 require("config.treesitter")
+require("config.dap")
 
 vim.loader.enable()
 

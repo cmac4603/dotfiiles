@@ -1,3 +1,5 @@
+require('telescope').load_extension('dap')
+
 local M = {}
 
 M.toggle_telescope = function(harpoon_files)

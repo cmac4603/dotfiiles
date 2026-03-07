@@ -4,58 +4,26 @@ return {
         dependencies = {
             "mfussenegger/nvim-dap-python",
             "ldelossa/nvim-dap-projects",
-            "ravsii/nvim-dap-envfile",
+            {
+                "ravsii/nvim-dap-envfile",
+                opts = {},
+            },
         },
         config = function()
-            local dap_python = require('dap-python')
-            dap_python.setup("uv")
-            dap_python.test_runner = 'pytest'
+            vim.api.nvim_set_hl(0, "DapBreakpoint", { fg = "#e51a1a" })
+            vim.api.nvim_set_hl(0, "DapBreakpointCondition", { fg = "#e51a1a" })
+            vim.api.nvim_set_hl(0, "DapBreakpointRejected", { fg = "#e51a1a" })
+            vim.api.nvim_set_hl(0, "DapLogPoint", { fg = "#e51a1a" })
+            vim.api.nvim_set_hl(0, "DapStopped", { fg = "#98c379" })
 
-            local dap = require('dap')
-            dap.adapters.lldb = {
-                type = 'executable',
-                command = vim.env.LLDB_EXEC_PATH,
-                name = 'lldb'
-            }
-
-            dap.adapters.vcl = {
-                name = 'falco',
-                type = 'executable',
-                command = 'falco',
-                args = { 'dap' },
-            }
-
-            dap.configurations.vcl = {
-                {
-                    type = 'vcl',
-                    request = 'launch',
-                    name = "Debug VCL by falco",
-                    mainVCL = "${file}",
-                    includePaths = { "${workspaceFolder}" },
-                },
-            }
-
-            dap.configurations.rust = {
-                {
-                    name = 'Launch',
-                    type = 'lldb',
-                    request = 'launch',
-                    program = function()
-                        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                    end,
-                    cwd = '${workspaceFolder}',
-                    stopOnEntry = false,
-                    args = {},
-                    env = function()
-                        local variables = {}
-                        for k, v in pairs(vim.fn.environ()) do
-                            table.insert(variables, string.format("%s=%s", k, v))
-                        end
-                        return variables
-                    end,
-                },
-            }
-        end
+            vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+            vim.fn.sign_define("DapBreakpointCondition",
+                { text = "◆", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
+            vim.fn.sign_define("DapBreakpointRejected",
+                { text = "○", texthl = "DapBreakpointRejected", linehl = "", numhl = "" })
+            vim.fn.sign_define("DapLogPoint", { text = "◈", texthl = "DapLogPoint", linehl = "", numhl = "" })
+            vim.fn.sign_define("DapStopped", { text = "→", texthl = "DapStopped", linehl = "DapStoppedLine", numhl = "" })
+        end,
     },
 
     {
@@ -64,7 +32,13 @@ return {
         lazy = false,
         ---@module 'dap-view'
         ---@type dapview.Config
-        opts = {},
+        opts = {
+            follow_tab = true,
+            windows = {
+                position = "right",
+                size = 0.45,
+            },
+        },
     },
 
     {

@@ -3,6 +3,7 @@ return {
         "nvim-telescope/telescope.nvim",
         tag = "v0.2.0",
         dependencies = {
+            "nvim-telescope/telescope-dap.nvim",
             "nvim-lua/plenary.nvim",
             "aaronhallaert/advanced-git-search.nvim",
         },
@@ -86,7 +87,7 @@ return {
     },
     {
         "barrett-ruth/http-codes.nvim",
-        config = function ()
+        config = function()
             vim.g.http_codes = {
                 use = "telescope",
             }
