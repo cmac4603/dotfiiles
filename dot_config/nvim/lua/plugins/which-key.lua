@@ -35,7 +35,7 @@ return {
             { "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>",                 desc = "Step Out" },
             { "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>",              desc = "Toggle REPL" },
             { "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>",                 desc = "Run Last" },
-            { "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>",                 desc = "Toggle UI" },
+            { "<leader>du", "<cmd>DapViewToggle<cr>",                               desc = "Toggle DAP View" },
             { "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>",                desc = "Terminate" },
             { "<leader>dn", "<cmd>lua require('dap-python').test_method()<cr>",     desc = "Python Test Method" },
             { "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>",      desc = "Python Test Class" },
@@ -112,12 +112,12 @@ return {
 
         -- random assortment
         wk.add({
-            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                          desc = "Toggle CSV View" },
-            { "<leader>ht",  ":Hardtime toggle<CR>",                            desc = "Hardtime Toggle" },
-            { "<leader>l",   function() Snacks.notifier.show_history() end,     desc = "Show notification history (logs)" },
-            { "<leader>s",   ":Silicon<CR>",                                    desc = "Sceenshot selected code",                       mode = { "v" } },
-            { "<leader>yp",  "<CMD>CopyRelPath<CR>",                            desc = "Copy the relative filepath to system clipboard" },
-            { "<leader>z",   "<CMD>ZenMode<CR>",                                desc = "Zen Toggle" },
+            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                      desc = "Toggle CSV View" },
+            { "<leader>ht",  ":Hardtime toggle<CR>",                        desc = "Hardtime Toggle" },
+            { "<leader>l",   function() Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
+            { "<leader>s",   ":Silicon<CR>",                                desc = "Sceenshot selected code",                       mode = { "v" } },
+            { "<leader>yp",  "<CMD>CopyRelPath<CR>",                        desc = "Copy the relative filepath to system clipboard" },
+            { "<leader>z",   "<CMD>ZenMode<CR>",                            desc = "Zen Toggle" },
         })
     end
 }

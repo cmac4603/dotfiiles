@@ -4,6 +4,7 @@ return {
         dependencies = {
             "mfussenegger/nvim-dap-python",
             "ldelossa/nvim-dap-projects",
+            "ravsii/nvim-dap-envfile",
         },
         config = function()
             local dap_python = require('dap-python')
@@ -58,72 +59,12 @@ return {
     },
 
     {
-        "rcarriga/nvim-dap-ui",
-        dependencies = {
-            "nvim-neotest/nvim-nio",
-        },
-        config = function()
-            local dapui = require("dapui")
-            dapui.setup({
-                expand_lines = true,
-                icons = { expanded = "", collapsed = "", circular = "" },
-                mappings = {
-                    -- Use a table to apply multiple mappings
-                    expand = { "<CR>", "<2-LeftMouse>" },
-                    open = "o",
-                    remove = "d",
-                    edit = "e",
-                    repl = "r",
-                    toggle = "t",
-                },
-                layouts = {
-                    {
-                        elements = {
-                            { id = "scopes",      size = 0.33 },
-                            { id = "breakpoints", size = 0.17 },
-                            { id = "stacks",      size = 0.25 },
-                            { id = "watches",     size = 0.25 },
-                        },
-                        size = 0.33,
-                        position = "right",
-                    },
-                    {
-                        elements = {
-                            { id = "repl",    size = 0.45 },
-                            { id = "console", size = 0.55 },
-                        },
-                        size = 0.27,
-                        position = "bottom",
-                    },
-                },
-                floating = {
-                    max_height = 0.9,
-                    max_width = 0.5,             -- Floats will be treated as percentage of your screen.
-                    border = vim.g.border_chars, -- Border style. Can be 'single', 'double' or 'rounded'
-                    mappings = {
-                        close = { "q", "<Esc>" },
-                    },
-                },
-            })
-
-            local dap = require("dap")
-            dap.listeners.before.attach.dapui_config = function()
-                dapui.open()
-            end
-            dap.listeners.before.launch.dapui_config = function()
-                dapui.open()
-            end
-            dap.listeners.before.event_terminated.dapui_config = function()
-                dapui.close()
-            end
-            dap.listeners.before.event_exited.dapui_config = function()
-                dapui.close()
-            end
-            dap.listeners.after.event_initialized["dapui_config"] = function()
-                dapui.open()
-            end
-        end,
-
+        "igorlfs/nvim-dap-view",
+        -- let the plugin lazy load itself
+        lazy = false,
+        ---@module 'dap-view'
+        ---@type dapview.Config
+        opts = {},
     },
 
     {

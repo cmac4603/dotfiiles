@@ -112,8 +112,15 @@ local function rename_file()
     end)
 end
 
-vim.keymap.set("n", "<leader>rf", rename_file, { desc = "Rename file (notify LSP)" })
+-- add `q` keymap to quit nvim-da-view filetypes
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "dap-view", "dap-view-term", "dap-repl" }, -- dap-repl is set by `nvim-dap`
+    callback = function(args)
+        vim.keymap.set("n", "q", "<C-w>q", { buffer = args.buf })
+    end,
+})
 
+vim.keymap.set("n", "<leader>rf", rename_file, { desc = "Rename file (notify LSP)" })
 
 -- write all modified buffers after a rename
 vim.api.nvim_create_autocmd("User", {
@@ -127,7 +134,6 @@ vim.api.nvim_create_autocmd("User", {
         end
     end,
 })
-
 
 -- CSPELL
 vim.lsp.config("cspell_lsp", {
