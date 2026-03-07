@@ -41,6 +41,7 @@ M.install_default_parsers = function()
         "helm",
         "html",
         "http",
+        "java",
         "javascript",
         "json",
         "json5",

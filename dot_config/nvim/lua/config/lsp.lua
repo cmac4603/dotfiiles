@@ -16,9 +16,11 @@ require("mason-tool-installer").setup({
         "cssls",
         "dockerls",
         "gopls",
+        "gradle-language-server",
+        "groovy-language-server",
         "helm_ls",
         "html",
-        -- "htmx",  -- borked right now on macos
+        "htmx",
         "jinja_lsp",
         "jsonls",
         "lua_ls",
@@ -30,7 +32,6 @@ require("mason-tool-installer").setup({
         "terraformls",
         "taplo",
         "ts_ls",
-        -- "ty",
         "yamlls",
     },
 })
@@ -44,10 +45,12 @@ vim.lsp.enable({
     "cssls",
     "djlint",
     "dockerls",
+    "gradle",
     "gopls",
+    "groovy",
     "helm_ls",
     "html",
-    -- "htmx",
+    "htmx",
     "jinja_lsp",
     "lua_ls",
     "protols",
@@ -56,8 +59,6 @@ vim.lsp.enable({
     -- "rust_analyzer",
     "taplo", -- toml
     "tailwindcss",
-    -- TODO: reenable when ty gets better
-    -- "ty",
     "yamlls",
 })
 
@@ -156,6 +157,12 @@ vim.lsp.config("gopls", {
         },
     },
 })
+
+-- GRADLE
+vim.lsp.config("gradle", {})
+
+-- GROOVY
+vim.lsp.config("groovy", {})
 
 -- HELM
 vim.lsp.config("helm_ls", {
