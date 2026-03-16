@@ -34,6 +34,7 @@ require("mason-tool-installer").setup({
         "terraformls",
         "taplo",
         "ts_ls",
+        "vtsls",
         "yamlls",
     },
 })
@@ -63,6 +64,7 @@ vim.lsp.enable({
     -- "rust_analyzer",
     "taplo", -- toml
     "tailwindcss",
+    "vtsls",
     "yamlls",
 })
 
@@ -161,10 +163,8 @@ vim.lsp.config("gopls", {
 })
 
 {{- if eq .chezmoi.hostname "adder" }}
--- GRADLE
+-- JAVA
 vim.lsp.config("gradle", {})
-
--- GROOVY
 vim.lsp.config("groovy", {})
 {{- end }}
 
@@ -350,6 +350,9 @@ vim.g.rustaceanvim = function()
         tools = {},
     }
 end
+
+-- TYPESCRIPT
+vim.lsp.config("vtsls", {})
 
 -- YAML
 vim.lsp.config("yamlls", {
