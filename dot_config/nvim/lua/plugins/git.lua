@@ -12,25 +12,25 @@ return {
         "rhysd/git-messenger.vim",
         config = function()
             vim.g.git_messenger_always_into_popup = true
-            vim.g.git_messenger_floating_win_opts = { border = 'single' }
+            vim.g.git_messenger_floating_win_opts = { border = "single" }
         end,
     },
     {
-        'topaxi/pipeline.nvim',
-        build = 'make',
+        "topaxi/pipeline.nvim",
+        build = "make",
         ---@type pipeline.Config
         opts = {
             split = {
-                relative = 'editor',
-                position = 'right',
+                relative = "editor",
+                position = "right",
                 size = 120,
                 win_options = {
                     wrap = true,
                     number = false,
                     foldlevel = nil,
-                    foldcolumn = '0',
+                    foldcolumn = "0",
                     cursorcolumn = false,
-                    signcolumn = 'no',
+                    signcolumn = "no",
                 },
             },
         },
@@ -41,16 +41,15 @@ return {
         cmd = "CodeDiff",
     },
 
-    {
-        "https://tangled.org/cmac4603.dev/gh-pr-comments.nvim",
-        opts = {},
-    },
-
-    -- local dev plugin location (adder)
     -- {
-    --     dir = "~/dev/repos/gh-pr-comments.nvim.git/comments-in-scratch-buffer",
-    --     name = "gh-pr-comments",
+    --     "https://tangled.org/cmac4603.dev/gh-pr-comments.nvim",
     --     opts = {},
     -- },
 
+    -- local dev plugin location
+    {
+        dir = "~/dev/repos/gh-pr-comments.nvim.git/switch-to-vertical-right-pane",
+        name = "gh-pr-comments",
+        opts = {},
+    },
 }
