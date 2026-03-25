@@ -39,6 +39,25 @@ sketchybar --add event aerospace_workspace_change
 sketchybar --add event aerospace_monitor_change
 
 for sid in $(aerospace list-workspaces --all); do
+  if [ "${sid}" == "C" ]; then
+      icon=""
+  elif [ "${sid}" == "E" ]; then
+      icon="󰴢"
+  elif [ "${sid}" == "B" ]; then
+      icon="󰈹"
+  elif [ "${sid}" == "T" ]; then
+      icon=""
+  elif [ "${sid}" == "M" ]; then
+      icon="󰊻"
+  elif [ "${sid}" == "N" ]; then
+      icon=""
+  elif [ "${sid}" == "Y" ]; then
+      icon=""
+  elif [ "${sid}" == "S" ]; then
+      icon=""
+  else
+      icon="$sid"
+  fi
   sketchybar --add item space.$sid left \
     --subscribe space.$sid aerospace_workspace_change \
     --set space.$sid \
@@ -53,7 +72,7 @@ for sid in $(aerospace list-workspaces --all); do
     background.border_color=0xAAFFFFFF \
     background.border_width=0 \
     background.height=25 \
-    icon="$sid" \
+    icon="$icon" \
     icon.padding_left=10 \
     icon.shadow.distance=4 \
     icon.shadow.color=0xA0000000 \
