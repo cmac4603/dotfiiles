@@ -61,7 +61,7 @@ inner.horizontal = 10
 inner.vertical = 10
 outer.left = 10
 outer.bottom = 10
-outer.top = 10
+outer.top = [{ monitor."built-in" = 10 }, { monitor."main" = 50 }, 50]
 outer.right = 10
 
 # 'main' binding mode declaration
@@ -181,7 +181,10 @@ alt-shift-z = ['move-node-to-workspace Z', 'workspace Z']
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-period = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+alt-shift-tab = [
+  'move-workspace-to-monitor --wrap-around next',
+  'exec-and-forget sketchybar --trigger aerospace_monitor_change TARGET_MONITOR=$(aerospace list-monitors --focused --format "%{monitor-appkit-nsscreen-screens-id}") FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)',
+]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
@@ -231,3 +234,15 @@ run = ['move-node-to-workspace C']
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
 run = ['move-node-to-workspace Z']
+
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = ['move-node-to-workspace S']
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = ['move-node-to-workspace S']
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ['move-node-to-workspace G']
