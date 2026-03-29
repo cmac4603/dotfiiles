@@ -305,11 +305,6 @@ return {
         })
 
         wk.add({
-            { "<leader>m", group = "Markdown" },
-            { "<leader>mt", "<CMD>RenderMarkdown toggle<CR>", desc = "Split Toggle" },
-        })
-
-        wk.add({
             { "<leader>.", "<CMD>Scratch<CR>", desc = "Open Daily Scratch" },
         })
 

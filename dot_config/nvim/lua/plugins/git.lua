@@ -48,7 +48,7 @@ return {
 
     -- local dev plugin location
     {
-        dir = "~/dev/repos/gh-pr-comments.nvim.git/switch-to-vertical-right-pane",
+        dir = "~/dev/repos/gh-pr-comments.nvim.git/add-config",
         name = "gh-pr-comments",
         opts = {},
     },
