@@ -130,6 +130,9 @@ fish_add_path $HOME/.rd/bin
 fish_add_path $HOME/.local/share/fnm
 
 fish_ssh_agent
+
+# activate mise
+~/.local/bin/mise activate fish | source
 {{- end }}
 
 zoxide init fish | source
