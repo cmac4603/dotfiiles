@@ -71,7 +71,6 @@ abbr -a -- whatismyip "dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
 abbr -a -- wp which python
 abbr -a -- setpy -gx PYTHONPATH $(pwd)
 
-
 # rust things
 abbr -a -- c cargo
 abbr -a -- cb cargo build
