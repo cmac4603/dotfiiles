@@ -57,6 +57,8 @@ for sid in $(aerospace list-workspaces --all); do
       icon=""
   elif [ "${sid}" == "G" ]; then
       icon=""
+  elif [ "${sid}" == "W" ]; then
+      icon=""
   else
       icon="$sid"
   fi
