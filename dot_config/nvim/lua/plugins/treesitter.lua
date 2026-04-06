@@ -1,11 +1,11 @@
 return {
     {
-        "nvim-treesitter/nvim-treesitter",
+        "cmac4603/nvim-treesitter",
         branch = "main",
         build = ":TSUpdate",
         config = function()
             require("config.treesitter").install_default_parsers()
-        end
+        end,
     },
 
     {
@@ -56,5 +56,4 @@ return {
     },
 
     "JoosepAlviste/nvim-ts-context-commentstring",
-
 }
