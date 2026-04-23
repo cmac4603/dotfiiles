@@ -60,7 +60,7 @@ return {
     {
         "mrcjkb/rustaceanvim",
         version = "^6", -- Recommended
-        lazy = false,   -- This plugin is already lazy
+        lazy = false, -- This plugin is already lazy
     },
 
     {
@@ -91,18 +91,18 @@ return {
 
     -- java
     {
-        'nvim-java/nvim-java',
+        "nvim-java/nvim-java",
         config = function()
-            require('java').setup()
-            vim.lsp.enable('jdtls')
+            require("java").setup()
+            vim.lsp.enable("jdtls")
         end,
     },
 
     -- jinja2
-    { "HiPhish/jinja.vim", },
+    { "HiPhish/jinja.vim" },
 
     -- vcl syntax highlighting support
-    { "fgsch/vim-varnish", },
+    { "fgsch/vim-varnish" },
 
     {
         "folke/lazydev.nvim",
@@ -110,4 +110,8 @@ return {
         opts = {},
     },
 
+    {
+        "jim-at-jibba/micropython.nvim",
+        dependencies = { "folke/snacks.nvim" },
+    },
 }
