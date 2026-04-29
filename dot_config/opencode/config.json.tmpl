@@ -16,6 +16,7 @@
         "bash": "ask"
     },
     "mcp": {
+{{- if eq .chezmoi.hostname "adder" }}
         "linear": {
             "type": "local",
             "command": [
@@ -25,6 +26,7 @@
                 "https://mcp.linear.app/mcp"
             ]
         },
+{{- end }}
         "jira": {
             "type": "remote",
             "url": "https://mcp.atlassian.com/v1/mcp",

@@ -1,9 +1,7 @@
 [user]
 	name = cmac4603
 	email = 12590206+cmac4603@users.noreply.github.com
-{{- if eq .chezmoi.hostname "omarchy" }}
-	signingkey = 4C41CFBBF66BDD2C
-{{- else if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
+{{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
 	signingkey = B2DCFB0E0C151F82
 {{- else }}
 	signingkey = C9E3035BCEA0A1F8
