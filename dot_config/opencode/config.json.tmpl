@@ -5,6 +5,17 @@
     "autoupdate": true,
     "disabled_providers": ["openai"],
     "provider": {
+        "amazon-bedrock": {
+            "models": {
+                "anthropic-claude-sonnet-4.6": {
+                    "id": "arn:aws:bedrock:us-east-1:758497319431:inference-profile/global.anthropic.claude-sonnet-4-6"
+                }
+            },
+            "options": {
+                "region": "us-east-1",
+                "profile": "mediaos-dev-aidev"
+            }
+        },
         "google": {
             "options": {
                 "projectId": "gen-lang-client-0222096719"
