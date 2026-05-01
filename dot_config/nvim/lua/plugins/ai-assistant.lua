@@ -15,40 +15,9 @@ return {
             },
         },
         opts = {
-            adapters = {
-                http = {
-                    vertex = function()
-                        return require("codecompanion.adapters").extend("vertex", {
-                            env = {
-                                project_id = "hdm-ai-dev",
-                                api_key = "cmd: gcloud auth application-default print-access-token",
-                            },
-                            schema = {
-                                model = {
-                                    default = "google/gemini-2.5-pro"
-                                }
-                            }
-                        })
-                    end,
-                }
-            },
-            strategies = {
+            interactions = {
                 chat = {
-                    name = "copilot",
-                    model = "claude-sonnet-4",
-                    tools = {
-                        ["mcp"] = {
-                            -- Prevent mcphub from loading before needed
-                            callback = function()
-                                return require("mcphub.extensions.codecompanion")
-                            end,
-                            description = "Call tools and resources from the MCP Servers"
-                        }
-                    }
-                },
-                inline = {
-                    adapter = "copilot",
-                    model = "claude-sonnet-4",
+                    adapter = "opencode",
                 },
             },
             memory = {
@@ -66,14 +35,7 @@ return {
                     },
                 },
             },
-        }
-    },
-
-    {
-        "github/copilot.vim",
-        config = function()
-            vim.g.copilot_enabled = 0
-        end,
+        },
     },
 
     {
@@ -81,7 +43,7 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
         },
-        cmd = "MCPHub",              -- lazy load by default
+        cmd = "MCPHub", -- lazy load by default
         build = "bundled_build.lua", -- Use this and set use_bundled_binary = true in opts  (see Advanced configuration)
         config = function()
             require("mcphub").setup({
@@ -94,10 +56,9 @@ return {
                         make_vars = true,
                         -- Create slash commands for prompts
                         make_slash_commands = true,
-                    }
-                }
+                    },
+                },
             })
         end,
     },
-
 }
