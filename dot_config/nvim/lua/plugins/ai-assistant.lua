@@ -13,11 +13,24 @@ return {
                 "franco-ruggeri/codecompanion-spinner.nvim",
                 opts = {},
             },
+            "viespejo/cc-adapter-vertex-ai.nvim",
         },
         opts = {
+            adapters = {
+                http = {
+                    vertex_gemini = function()
+                        return require("codecompanion.adapters").extend("vertex-gemini", {
+                            env = {
+                                project_id = "hdm-ai-dev",
+                                region = "global",
+                            },
+                        })
+                    end,
+                },
+            },
             interactions = {
                 chat = {
-                    adapter = "opencode",
+                    adapter = "vertex_gemini",
                 },
             },
             memory = {

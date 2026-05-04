@@ -6,30 +6,6 @@ return {
     "neovim/nvim-lspconfig",
     "b0o/schemastore.nvim",
 
-    -- maybe add one day
-    -- {
-    --     "nvimdev/lspsaga.nvim",
-    --     config = function()
-    --         require('lspsaga').setup({
-    --             lightbulb = { ignore = { ft = { 'http' } } }
-    --         })
-    --     end,
-    --     ft = {
-    --         "docker",
-    --         "helm",
-    --         "html",
-    --         "http",
-    --         "lua",
-    --         "python",
-    --         "rust",
-    --         "toml",
-    --     },
-    --     dependencies = {
-    --         "nvim-treesitter/nvim-treesitter",
-    --         "nvim-tree/nvim-web-devicons",
-    --     },
-    -- },
-
     -- golang
     {
         "olexsmir/gopher.nvim",
@@ -69,24 +45,6 @@ return {
         config = function()
             require("crates").setup({})
         end,
-    },
-
-    -- typescript
-    {
-        "pmizio/typescript-tools.nvim",
-        dependencies = {
-            "neovim/nvim-lspconfig",
-            "nvim-lua/plenary.nvim",
-        },
-        ft = {
-            "typescript",
-            "typescriptreact",
-            "typescript.tsx",
-            "javascript",
-            "javascriptreact",
-            "javascript.jsx",
-        },
-        opts = {},
     },
 
     -- java
