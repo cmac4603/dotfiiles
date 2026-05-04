@@ -50,6 +50,7 @@ abbr -a -- mvm "hyprctl dispatch moveworkspacetomonitor"
 
 # tmux things
 abbr -a -- tlw "tmux list-windows"
+abbr -a -- tls "tmux list-sessions"
 
 # random things
 abbr -a -- cb clipboard
