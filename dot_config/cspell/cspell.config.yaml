@@ -28,7 +28,9 @@ words:
   - hostnames
   - htmx
   - httproute
+  - httproutes
   - httprouteversion
+  - httprouteversions
   - hypr
   - igoringress
   - imdb
