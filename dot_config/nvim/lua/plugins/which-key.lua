@@ -177,6 +177,13 @@ return {
                 desc = "Find obsidian dailies",
             },
             {
+                "<leader>fr",
+                function()
+                    require("telescope.builtin").lsp_references()
+                end,
+                desc = "Find LSP references",
+            },
+            {
                 "<leader>fs",
                 "<CMD>ScratchList<CR>",
                 desc = "Find scratch",

@@ -33,11 +33,11 @@ return {
                 buffers = {
                     mappings = {
                         i = {
-                            ["<c-d>"] = require("telescope.actions").delete_buffer +
-                                require("telescope.actions").move_to_top,
-                        }
-                    }
-                }
+                            ["<c-d>"] = require("telescope.actions").delete_buffer
+                                + require("telescope.actions").move_to_top,
+                        },
+                    },
+                },
             },
             extensions = {
                 advanced_git_search = { -- Browse command to open commits in browser. Default fugitive GBrowse.
@@ -55,8 +55,8 @@ return {
                 fzf = {
                     fuzzy = true,
                     override_generic_sorter = true, -- override the generic sorter
-                    override_file_sorter = true,    -- override the file sorter
-                    case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+                    override_file_sorter = true, -- override the file sorter
+                    case_mode = "smart_case", -- or "ignore_case" or "respect_case"
                 },
             },
         },
@@ -97,6 +97,6 @@ return {
         "LinArcX/telescope-env.nvim",
         config = function()
             require("telescope").load_extension("env")
-        end
+        end,
     },
 }
