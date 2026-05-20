@@ -10,7 +10,12 @@ return {
             enabled = true,
             preset = {
                 keys = {
-                    { icon = " ", key = "f", desc = "Find File", action = ":lua require'config.telescope'.project_files()" },
+                    {
+                        icon = " ",
+                        key = "f",
+                        desc = "Find File",
+                        action = ":lua require'config.telescope'.project_files()",
+                    },
                     { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                     { icon = " ", key = "t", desc = "Find Text", action = ":Telescope live_grep" },
                     { icon = " ", key = "g", desc = "Search Git", action = ":AdvancedGitSearch" },
@@ -20,18 +25,24 @@ return {
                         desc = "Harpoon",
                         action = function()
                             local harpoon = require("harpoon")
-                            require('config.telescope').toggle_telescope(harpoon:list())
-                        end
+                            require("config.telescope").toggle_telescope(harpoon:list())
+                        end,
                     },
                     { icon = " ", key = "s", desc = "Restore Session", section = "session" },
                     { icon = " ", key = "d", desc = "Open DBUI", action = ":DBUI" },
-                    { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+                    {
+                        icon = "󰒲 ",
+                        key = "L",
+                        desc = "Lazy",
+                        action = ":Lazy",
+                        enabled = package.loaded.lazy ~= nil,
+                    },
                     { icon = " ", key = "q", desc = "Quit", action = ":qa" },
                 },
             },
             sections = {
                 { section = "header" },
-                { section = "keys",  gap = 1, padding = 1 },
+                { section = "keys", gap = 1, padding = 1 },
                 {
                     pane = 2,
                     icon = " ",
@@ -48,7 +59,7 @@ return {
                         {
                             title = "Git Graph",
                             icon = " ",
-                            cmd = "git log --oneline --decorate --graph --all -n 10",
+                            cmd = "git log --oneline --decorate --graph -n 10",
                             height = 12,
                         },
                         {
@@ -64,7 +75,7 @@ return {
                         {
                             title = "Current PR Checks",
                             icon = " ",
-                            cmd = "gh pr checks || echo \"\"",
+                            cmd = 'gh pr checks || echo ""',
                             key = "c",
                             action = function()
                                 vim.fn.jobstart("gh pr checks --web", { detach = true })
@@ -104,8 +115,8 @@ return {
         picker = { enabled = false },
         styles = {
             notification = {
-                wo = { wrap = true } -- Wrap notifications
-            }
+                wo = { wrap = true }, -- Wrap notifications
+            },
         },
         zen = { enabled = true },
     },
