@@ -214,6 +214,11 @@ return {
             { "<leader>g", group = "Git" },
             {
                 "<leader>ga",
+                "<CMD>Git add -u<CR>",
+                desc = "Git add (fugitive)",
+            },
+            {
+                "<leader>gA",
                 "<cmd>Pipeline<cr>",
                 desc = "Open GitHub Actions Pipelines",
             },
@@ -224,13 +229,13 @@ return {
             },
             {
                 "<leader>gc",
-                "<CMD>GhPrComments<CR>",
-                desc = "Open GitHub PR Comments",
+                "<CMD>Git commit<CR>",
+                desc = "Git commit (fugitive)",
             },
             {
                 "<leader>gC",
-                "<CMD>GhPrCommentsClear<CR>",
-                desc = "Clear GitHub PR Comments",
+                "<CMD>GhPrComments<CR>",
+                desc = "Open GitHub PR Comments",
             },
             {
                 "<leader>gdh",
@@ -278,6 +283,11 @@ return {
                 desc = "Find Git Commits That Changed The Current File",
             },
             {
+                "<leader>gg",
+                "<CMD>Git<CR>",
+                desc = "Git (fugitive)",
+            },
+            {
                 "<leader>go",
                 function()
                     Snacks.gitbrowse()
@@ -290,6 +300,11 @@ return {
                     vim.fn.jobstart("gh pr view --web", { detach = true })
                 end,
                 desc = "Open Github PR",
+            },
+            {
+                "<leader>gw",
+                "<CMD>Gwrite<CR>",
+                desc = "Git write (fugitive)",
             },
         })
 
