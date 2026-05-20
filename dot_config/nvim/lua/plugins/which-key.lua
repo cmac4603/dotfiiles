@@ -307,6 +307,11 @@ return {
                 desc = "Open Github PR",
             },
             {
+                "<leader>gr",
+                "<CMD>Gread<CR>",
+                desc = "Git write (fugitive)",
+            },
+            {
                 "<leader>gw",
                 "<CMD>Gwrite<CR>",
                 desc = "Git write (fugitive)",
