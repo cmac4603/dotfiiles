@@ -1,13 +1,18 @@
 return {
+
+    { "tpope/vim-fugitive" },
+
     {
         "lewis6991/gitsigns.nvim",
         opts = {},
     },
+
     {
         "FabijanZulj/blame.nvim",
         lazy = false,
         opts = {},
     },
+
     {
         "rhysd/git-messenger.vim",
         config = function()
@@ -15,6 +20,7 @@ return {
             vim.g.git_messenger_floating_win_opts = { border = "single" }
         end,
     },
+
     {
         "topaxi/pipeline.nvim",
         build = "make",
