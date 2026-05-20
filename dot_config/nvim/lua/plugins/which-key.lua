@@ -296,6 +296,11 @@ return {
             },
             {
                 "<leader>gp",
+                "<CMD>Git push<CR>",
+                desc = "Git push (fugitive)",
+            },
+            {
+                "<leader>gP",
                 function()
                     vim.fn.jobstart("gh pr view --web", { detach = true })
                 end,
