@@ -35,7 +35,6 @@ require("mason-tool-installer").setup({
         "terraformls",
         "taplo",
         "ts_ls",
-        "vtsls",
         "yamlls",
     },
 })
@@ -348,9 +347,6 @@ vim.g.rustaceanvim = function()
         tools = {},
     }
 end
-
--- TYPESCRIPT
-vim.lsp.config("vtsls", {})
 
 -- YAML
 vim.lsp.config("yamlls", {

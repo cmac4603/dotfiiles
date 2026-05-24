@@ -3,6 +3,9 @@ $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell
 version: '0.2'
 words:
   - appropes
+  - loadtest
+  - entryfile
+  - scaffolder
   - autocmd
   - automagically
   - autoread

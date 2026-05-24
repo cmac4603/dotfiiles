@@ -59,6 +59,12 @@ return {
     -- jinja2
     { "HiPhish/jinja.vim" },
 
+    {
+        "pmizio/typescript-tools.nvim",
+        dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+        opts = {},
+    },
+
     -- vcl syntax highlighting support
     { "fgsch/vim-varnish" },
 
