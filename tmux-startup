@@ -20,6 +20,6 @@ if [ -z "$TMUX" ]; then
     fi
   else
       # use standard fish shell for quick terminal in ghostty
-      /usr/local/bin/fish
+      /usr/local/bin/fish || /usr/bin/fish
   fi
 fi
