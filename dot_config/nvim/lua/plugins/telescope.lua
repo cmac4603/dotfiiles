@@ -6,6 +6,17 @@ return {
             "nvim-telescope/telescope-dap.nvim",
             "nvim-lua/plenary.nvim",
             "aaronhallaert/advanced-git-search.nvim",
+            {
+                "prochri/telescope-all-recent.nvim",
+                dependencies = {
+                    "kkharji/sqlite.lua",
+                },
+                opts = {
+                    default = {
+                        sorting = "frecency",
+                    },
+                },
+            },
         },
         opts = {
             defaults = {

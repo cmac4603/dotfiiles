@@ -104,6 +104,7 @@ return {
             },
         },
         indent = { enabled = true },
+        input = { enabled = true },
         gitbrowse = { enabled = true },
         notifier = {
             enabled = true,
