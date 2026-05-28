@@ -22,6 +22,7 @@ abbr -a -- gco git checkout
 abbr -a -- gd git diff
 abbr -a -- gl git pull
 abbr -a -- glg git lg
+abbr -a -- glog git log --oneline --decorate --graph
 abbr -a -- gloga git log --oneline --decorate --graph --all
 abbr -a -- gpf git push --force
 abbr -a -- gp git push
