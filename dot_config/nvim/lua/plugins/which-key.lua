@@ -214,13 +214,13 @@ return {
             { "<leader>g", group = "Git" },
             {
                 "<leader>ga",
-                "<CMD>Git add -u<CR>",
-                desc = "Git add (fugitive)",
+                "<cmd>Pipeline<cr>",
+                desc = "Open GitHub Actions Pipelines",
             },
             {
                 "<leader>gA",
-                "<cmd>Pipeline<cr>",
-                desc = "Open GitHub Actions Pipelines",
+                "<CMD>Git add -u<CR>",
+                desc = "Git add (fugitive)",
             },
             {
                 "<leader>gb",
