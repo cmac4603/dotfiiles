@@ -308,7 +308,7 @@ return {
             },
             {
                 "<leader>gr",
-                "<CMD>Gread<CR>",
+                "<CMD>Git rebase -i HEAD~",
                 desc = "Git write (fugitive)",
             },
             {
