@@ -39,6 +39,17 @@
             ]
         },
 {{- end }}
+        "chrome-devtools": {
+            "type": "local",
+            "command": [
+                "npx",
+                "-y",
+                "chrome-devtools-mcp@latest",
+                "--browserUrl",
+                "http://localhost:12345"
+            ]
+        },
+{{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
         "jira": {
             "type": "remote",
             "url": "https://mcp.atlassian.com/v1/mcp",
@@ -51,17 +62,6 @@
                 "BIGQUERY_PROJECT": "hdm-mediaos-fastly-logs"
             }
         },
-        "chrome-devtools": {
-            "type": "local",
-            "command": [
-                "npx",
-                "-y",
-                "chrome-devtools-mcp@latest",
-                "--browserUrl",
-                "http://localhost:12345"
-            ]
-        },
-{{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
         "sentry": {
             "type": "local",
             "command": [
