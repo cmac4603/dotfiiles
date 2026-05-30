@@ -18,7 +18,7 @@ require("mason-tool-installer").setup({
         "gopls",
 {{- if eq .chezmoi.hostname "adder" }}
         "gradle-language-server",
-        "groovy-language-server",
+        -- "groovy-language-server",
 {{- end }}
         "helm_ls",
         "html",
@@ -51,7 +51,7 @@ vim.lsp.enable({
     "gradle",
     "gopls",
 {{- if eq .chezmoi.hostname "adder" }}
-    "groovy",
+    -- "groovy",
 {{- end }}
     "helm_ls",
     "html",
@@ -162,7 +162,7 @@ vim.lsp.config("gopls", {
 {{- if eq .chezmoi.hostname "adder" }}
 -- JAVA
 vim.lsp.config("gradle", {})
-vim.lsp.config("groovy", {})
+-- vim.lsp.config("groovy", {})
 {{- end }}
 
 -- HELM
