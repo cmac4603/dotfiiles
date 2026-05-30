@@ -1,6 +1,7 @@
 {
     "$schema": "http://opencode.ai/config.json",
     "theme": "tokyonight",
+    "model": "opencode/deepseek-v4-flash-free",
     "share": "manual",
     "autoupdate": true,
     "disabled_providers": ["openai"],
@@ -60,6 +61,16 @@
                 "http://localhost:12345"
             ]
         },
+{{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
+        "sentry": {
+            "type": "local",
+            "command": [
+                "npx",
+                "mcp-remote@latest",
+                "https://mcp.sentry.dev/mcp"
+            ]
+        },
+{{- end }}
         "context7": {
             "type": "local",
             "command": [
@@ -70,14 +81,6 @@
                 "{{ .context7_api_key }}"
             ],
             "enabled": true
-        },
-        "sentry": {
-            "type": "local",
-            "command": [
-                "npx",
-                "mcp-remote@latest",
-                "https://mcp.sentry.dev/mcp"
-            ]
         }
     }
 }

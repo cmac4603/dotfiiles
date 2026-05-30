@@ -2,13 +2,8 @@ return {
 
     {
         "olimorris/codecompanion.nvim",
-        version = "v17.33.0",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            {
-                "nvim-treesitter/nvim-treesitter",
-                branch = "main",
-            },
             {
                 "franco-ruggeri/codecompanion-spinner.nvim",
                 opts = {},
@@ -18,6 +13,14 @@ return {
         opts = {
             adapters = {
                 http = {
+                    vertex_anthropic = function()
+                        return require("codecompanion.adapters").extend("vertex-anthropic", {
+                            env = {
+                                project_id = "hdm-ai-dev",
+                                region = "global",
+                            },
+                        })
+                    end,
                     vertex_gemini = function()
                         return require("codecompanion.adapters").extend("vertex-gemini", {
                             env = {
@@ -29,23 +32,17 @@ return {
                 },
             },
             interactions = {
+                background = {
+                    adapter = "vertex_gemini",
+                },
                 chat = {
                     adapter = "vertex_gemini",
                 },
-            },
-            memory = {
-                opts = {
-                    chat = {
-                        enabled = true,
-                    },
+                cmd = {
+                    adapter = "vertex_gemini",
                 },
-                claude = {
-                    description = "Memory files for Claude Code users",
-                    parser = "claude",
-                    files = {
-                        "AGENT.md",
-                        "memory-bank/",
-                    },
+                inline = {
+                    adapter = "vertex_gemini",
                 },
             },
         },
