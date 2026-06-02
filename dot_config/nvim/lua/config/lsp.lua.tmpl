@@ -64,6 +64,7 @@ vim.lsp.enable({
     -- "rust_analyzer",
     "taplo", -- toml
     "tailwindcss",
+    "terraformls",
     "vtsls",
     "yamlls",
 })
@@ -347,6 +348,8 @@ vim.g.rustaceanvim = function()
         tools = {},
     }
 end
+
+vim.lsp.config("terraformls", {})
 
 -- YAML
 vim.lsp.config("yamlls", {
