@@ -3,9 +3,6 @@ $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell
 version: '0.2'
 words:
   - appropes
-  - loadtest
-  - entryfile
-  - scaffolder
   - autocmd
   - automagically
   - autoread
@@ -19,6 +16,7 @@ words:
   - dockerls
   - elif
   - endfor
+  - entryfile
   - fastly
   - finalizers
   - fnameescape
@@ -28,6 +26,7 @@ words:
   - gmil
   - gmils
   - gopls
+  - healthz
   - hearstapps
   - hikaru
   - hostnames
@@ -47,6 +46,7 @@ words:
   - kopf
   - kubefeature
   - kubeprod
+  - loadtest
   - lsp
   - noremap
   - nvim
@@ -54,6 +54,7 @@ words:
   - primagean
   - rockspec
   - rustaceanvim
+  - scaffolder
   - storystudio
   - stylesheet
   - taplo
