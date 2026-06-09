@@ -2,6 +2,7 @@
 $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
 version: '0.2'
 words:
+  - Cfgs
   - appropes
   - autocmd
   - automagically
@@ -9,7 +10,6 @@ words:
   - autouse
   - bufnr
   - bufs
-  - Cfgs
   - cmac
   - codelldb
   - cookiecutter
@@ -17,6 +17,7 @@ words:
   - elif
   - endfor
   - entryfile
+  - espflash
   - fastly
   - finalizers
   - fnameescape
