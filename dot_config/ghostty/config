@@ -1,4 +1,5 @@
 command=/usr/local/bin/tmux-startup
+theme = cyberdream
 window-decoration = false
 mouse-hide-while-typing = true
 bold-is-bright = true
