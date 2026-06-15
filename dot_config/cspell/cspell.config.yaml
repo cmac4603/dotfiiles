@@ -2,7 +2,6 @@
 $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
 version: '0.2'
 words:
-  - Cfgs
   - appropes
   - autocmd
   - automagically
@@ -10,7 +9,11 @@ words:
   - autouse
   - bufnr
   - bufs
+  - cfgs
+  - chezmoi
   - cmac
+  - cmacrae
+  - codecompanion
   - codelldb
   - cookiecutter
   - dockerls
@@ -23,6 +26,7 @@ words:
   - fnameescape
   - fnamemodify
   - folke
+  - ghidrah
   - ghpr
   - gmil
   - gmils
@@ -39,6 +43,7 @@ words:
   - hypr
   - igoringress
   - imdb
+  - infri
   - ingressversion
   - ingressversions
   - jsonls
@@ -49,6 +54,7 @@ words:
   - kubeprod
   - loadtest
   - lsp
+  - mcphub
   - noremap
   - nvim
   - opencode
