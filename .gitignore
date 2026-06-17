@@ -1,1 +1,3 @@
 dot_aws/
+# tmp dir used by the superpowers ai plugin
+docs/
