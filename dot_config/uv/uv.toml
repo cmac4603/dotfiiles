@@ -1,2 +1,2 @@
 exclude-newer = "7 days"
-# exclude-newer-package = { appropes-client = false, hydra_client = false, spraypaint_sdk = false }
+exclude-newer-package = { hyprland-config = false }
