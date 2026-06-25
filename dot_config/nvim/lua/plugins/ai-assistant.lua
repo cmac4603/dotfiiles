@@ -26,7 +26,7 @@ return {
                             env = {
                                 project_id = "hdm-ai-dev",
                                 region = "global",
-                                model = "gemini-3.1-flash-lite-preview",
+                                model = "gemini-3-flash-lite-preview",
                             },
                         })
                     end,
@@ -43,16 +43,16 @@ return {
             },
             interactions = {
                 background = {
-                    adapter = "vertex_gemini",
+                    adapter = "opencode",
                 },
                 chat = {
-                    adapter = "vertex_gemini",
+                    adapter = "opencode",
                 },
                 cmd = {
-                    adapter = "vertex_gemini",
+                    adapter = "opencode",
                 },
                 inline = {
-                    adapter = "vertex_gemini",
+                    adapter = "opencode",
                 },
             },
         },
