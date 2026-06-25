@@ -47,7 +47,7 @@ abbr -a -- kx kubectx
 abbr -a -- kn kubens
 
 # hypr things
-abbr -a -- mvm "hyprctl dispatch moveworkspacetomonitor"
+abbr -a -- mvm "hyprctl dispatch 'hl.dsp.workspace.move({ workspace = 1,  monitor = 1 })' && hyprctl dispatch 'hl.dsp.workspace.move({ workspace = 2,  monitor = 1 })'"
 
 # tmux things
 abbr -a -- tlw "tmux list-windows"
