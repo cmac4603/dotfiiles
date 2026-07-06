@@ -48,13 +48,13 @@ return {
     },
 
     -- java
-    {
-        "nvim-java/nvim-java",
-        config = function()
-            require("java").setup()
-            vim.lsp.enable("jdtls")
-        end,
-    },
+    -- {
+    --     "nvim-java/nvim-java",
+    --     config = function()
+    --         require("java").setup()
+    --         vim.lsp.enable("jdtls")
+    --     end,
+    -- },
 
     -- jinja2
     { "HiPhish/jinja.vim" },
