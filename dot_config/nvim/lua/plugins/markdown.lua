@@ -1,8 +1,11 @@
 return {
-
     {
         "yousefhadder/markdown-plus.nvim",
         ft = "markdown",
-        opts = {},
+        opts = {
+            features = {
+                list_management = false,
+            },
+        },
     },
 }
