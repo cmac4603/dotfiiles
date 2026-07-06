@@ -288,6 +288,11 @@ return {
                 desc = "Git (fugitive)",
             },
             {
+                "<leader>gm",
+                "<CMD>Gdiffsplit!<CR>",
+                desc = "Git merge conflicts (fugitive)",
+            },
+            {
                 "<leader>go",
                 function()
                     Snacks.gitbrowse()
@@ -309,7 +314,7 @@ return {
             {
                 "<leader>gr",
                 ":Git rebase -i HEAD~",
-                desc = "Git write (fugitive)",
+                desc = "Git rebase -i (fugitive)",
             },
             {
                 "<leader>gw",
