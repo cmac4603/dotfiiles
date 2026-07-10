@@ -21,6 +21,8 @@ abbr -a -- gcmsg git commit -m
 abbr -a -- gco git checkout
 abbr -a -- gd git diff
 abbr -a -- gdependabot gh pr list --author "@dependabot[bot]" --state open --json "headRefName,headRefOid"
+abbr -a -- gf git fetch
+abbr -a -- gfo git fetch origin
 abbr -a -- gl git pull
 abbr -a -- glg git lg
 abbr -a -- glog git log --oneline --decorate --graph
