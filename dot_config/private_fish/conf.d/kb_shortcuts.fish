@@ -20,6 +20,7 @@ abbr -a -- gcl git clone
 abbr -a -- gcmsg git commit -m
 abbr -a -- gco git checkout
 abbr -a -- gd git diff
+abbr -a -- gdependabot gh pr list --author "@dependabot[bot]" --state open --json "headRefName,headRefOid"
 abbr -a -- gl git pull
 abbr -a -- glg git lg
 abbr -a -- glog git log --oneline --decorate --graph
