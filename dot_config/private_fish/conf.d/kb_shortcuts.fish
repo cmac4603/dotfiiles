@@ -10,6 +10,8 @@ abbr -a -- dps docker ps
 # fish things
 abbr -a -- hm history merge
 
+abbr -a -- esprs . $HOME/export-esp.sh
+
 # git things
 abbr -a -- gaa git add -A
 abbr -a -- ga git add
