@@ -21,15 +21,6 @@ return {
                             },
                         })
                     end,
-                    vertex_gemini = function()
-                        return require("codecompanion.adapters").extend("vertex-gemini", {
-                            env = {
-                                project_id = "hdm-ai-dev",
-                                region = "global",
-                                model = "gemini-3-flash-lite-preview",
-                            },
-                        })
-                    end,
                     ["llama.cpp"] = function()
                         return require("codecompanion.adapters").extend("openai_compatible", {
                             env = {
