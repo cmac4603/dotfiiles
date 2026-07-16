@@ -76,6 +76,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         vim.keymap.set("n", "ga", "<CMD>lua vim.lsp.buf.code_action()<CR>", opts)
         vim.keymap.set("n", "gd", "<CMD>lua vim.lsp.buf.definition()<CR>", opts)
+        vim.keymap.set("n", "gD", "<C-w>v<CMD>lua vim.lsp.buf.definition()<CR>", opts)
         vim.keymap.set("n", "gh",
             "<CMD>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>",
             opts
