@@ -58,4 +58,19 @@ return {
         name = "gh-pr-comments",
         opts = {},
     },
+
+    {
+        "ldelossa/gh.nvim", -- pr-reviews
+        dependencies = {
+            {
+                "ldelossa/litee.nvim",
+                config = function()
+                    require("litee.lib").setup()
+                end,
+            },
+        },
+        config = function()
+            require("litee.gh").setup()
+        end,
+    },
 }

@@ -238,6 +238,10 @@ return {
                 desc = "Open GitHub PR Comments",
             },
             {
+                "<leader>gd",
+                group = "GitDiff",
+            },
+            {
                 "<leader>gdh",
                 ":CodeDiff HEAD~",
                 desc = "Open CodeDiff incl. last x commits",
@@ -287,6 +291,30 @@ return {
                 "<CMD>Git<CR>",
                 desc = "Git (fugitive)",
             },
+
+            { "<leader>ghp", group = "Pull Request" },
+            { "<leader>ghpc", "<cmd>GHClosePR<cr>", desc = "Close" },
+            { "<leader>ghpd", "<cmd>GHPRDetails<cr>", desc = "Details" },
+            { "<leader>ghpe", "<cmd>GHExpandPR<cr>", desc = "Expand" },
+            { "<leader>ghpo", "<cmd>GHOpenPR<cr>", desc = "Open" },
+            { "<leader>ghpp", "<cmd>GHPopOutPR<cr>", desc = "PopOut" },
+            { "<leader>ghpr", "<cmd>GHRefreshPR<cr>", desc = "Refresh" },
+            { "<leader>ghpt", "<cmd>GHOpenToPR<cr>", desc = "Open To" },
+            { "<leader>ghpz", "<cmd>GHCollapsePR<cr>", desc = "Collapse" },
+
+            { "<leader>ghr", group = "Review" },
+            { "<leader>ghrb", "<cmd>GHStartReview<cr>", desc = "Begin" },
+            { "<leader>ghrc", "<cmd>GHCloseReview<cr>", desc = "Close" },
+            { "<leader>ghrd", "<cmd>GHDeleteReview<cr>", desc = "Delete" },
+            { "<leader>ghre", "<cmd>GHExpandReview<cr>", desc = "Expand" },
+            { "<leader>ghrs", "<cmd>GHSubmitReview<cr>", desc = "Submit" },
+            { "<leader>ghrz", "<cmd>GHCollapseReview<cr>", desc = "Collapse" },
+
+            { "<leader>ght", group = "Threads" },
+            { "<leader>ghtc", "<cmd>GHCreateThread<cr>", desc = "Create" },
+            { "<leader>ghtn", "<cmd>GHNextThread<cr>", desc = "Next" },
+            { "<leader>ghtt", "<cmd>GHToggleThread<cr>", desc = "Toggle" },
+
             {
                 "<leader>gm",
                 "<CMD>Gdiffsplit!<CR>",

@@ -34,16 +34,16 @@ return {
             },
             interactions = {
                 background = {
-                    adapter = "opencode",
+                    adapter = "vertex_anthropic",
                 },
                 chat = {
-                    adapter = "opencode",
+                    adapter = "vertex_anthropic",
                 },
                 cmd = {
-                    adapter = "opencode",
+                    adapter = "vertex_anthropic",
                 },
                 inline = {
-                    adapter = "opencode",
+                    adapter = "vertex_anthropic",
                 },
             },
         },

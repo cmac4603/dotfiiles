@@ -62,6 +62,7 @@ return {
                 -- To organize the imports.
                 "ruff_organize_imports",
             },
+            sql = { "sql_formatter" },
             terraform = { "terraform_fmt" },
             toml = { "taplo" },
             yaml = { "yamllint" },
