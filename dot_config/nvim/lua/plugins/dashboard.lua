@@ -29,6 +29,7 @@ return {
                         end,
                     },
                     { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+                    { icon = " ", key = "r", desc = "Open Github PR", action = ":GHOpenPR" },
                     { icon = " ", key = "d", desc = "Open DBUI", action = ":DBUI" },
                     {
                         icon = "󰒲 ",

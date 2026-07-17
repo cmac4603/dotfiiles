@@ -3,9 +3,10 @@ return {
         "nvim-telescope/telescope.nvim",
         tag = "v0.2.0",
         dependencies = {
-            "nvim-telescope/telescope-dap.nvim",
-            "nvim-lua/plenary.nvim",
             "aaronhallaert/advanced-git-search.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-dap.nvim",
+            "nvim-telescope/telescope-ui-select.nvim",
             {
                 "prochri/telescope-all-recent.nvim",
                 dependencies = {
@@ -68,6 +69,9 @@ return {
                     override_generic_sorter = true, -- override the generic sorter
                     override_file_sorter = true, -- override the file sorter
                     case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+                },
+                ["ui-select"] = {
+                    require("telescope.themes").get_dropdown({}),
                 },
             },
         },
