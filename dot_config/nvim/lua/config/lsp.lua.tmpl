@@ -132,6 +132,13 @@ vim.api.nvim_create_autocmd("User", {
     end,
 })
 
+vim.lsp.config('*', {
+  before_init = function(_, config)
+    local codesettings = require('codesettings')
+    codesettings.with_local_settings(config.name, config)
+  end,
+})
+
 -- CSPELL
 vim.lsp.config("cspell_lsp", {
     cmd = { "cspell-lsp", "--stdio", "--config", "~/.config/cspell/cspell.config.yaml" },
