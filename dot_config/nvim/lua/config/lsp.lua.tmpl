@@ -132,13 +132,6 @@ vim.api.nvim_create_autocmd("User", {
     end,
 })
 
-vim.lsp.config('*', {
-  before_init = function(_, config)
-    local codesettings = require('codesettings')
-    codesettings.with_local_settings(config.name, config)
-  end,
-})
-
 vim.lsp.config('rust-analyzer', {
   before_init = function(init_params, config)
     local codesettings = require('codesettings')
@@ -147,6 +140,13 @@ vim.lsp.config('rust-analyzer', {
     if config.default_settings and config.default_settings[config.name] then
       init_params.initializationOptions = config.default_settings[config.name]
     end
+  end,
+})
+
+vim.lsp.config('*', {
+  before_init = function(_, config)
+    local codesettings = require('codesettings')
+    codesettings.with_local_settings(config.name, config)
   end,
 })
 
