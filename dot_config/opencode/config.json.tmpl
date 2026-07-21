@@ -47,7 +47,7 @@
                 "-y",
                 "chrome-devtools-mcp@latest",
                 "--browserUrl",
-                "http://localhost:12345"
+                "http://127.0.0.1:9222"
             ]
         },
 {{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
@@ -60,7 +60,7 @@
             "type": "local",
             "command": ["toolbox", "--prebuilt", "bigquery", "--stdio"],
             "environment": {
-                "BIGQUERY_PROJECT": "hdm-mediaos-fastly-logs"
+                "BIGQUERY_PROJECT": "hmm-mediaos-loadtesting-data"
             }
         },
         "sentry": {
