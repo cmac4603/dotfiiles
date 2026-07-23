@@ -370,6 +370,14 @@ return {
         })
 
         wk.add({
+            { "<leader>o", group = "Overseer" },
+            { "<leader>oo", "<CMD>OverseerOpen<CR>", desc = "Open Overseer" },
+            { "<leader>ot", "<CMD>OverseerToggle<CR>", desc = "Toggle Overseer" },
+            { "<leader>or", "<CMD>OverseerRun<CR>", desc = "Run Overseer" },
+            { "<leader>oc", "<CMD>OverseerClose<CR>", desc = "Close Overseer" },
+        })
+
+        wk.add({
             { "<leader>.", "<CMD>Scratch<CR>", desc = "Open Daily Scratch" },
         })
 
