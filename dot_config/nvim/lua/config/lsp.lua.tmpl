@@ -143,10 +143,19 @@ vim.lsp.config('rust-analyzer', {
   end,
 })
 
-vim.lsp.config('*', {
+vim.lsp.config("*", {
   before_init = function(_, config)
-    local codesettings = require('codesettings')
-    codesettings.with_local_settings(config.name, config)
+    local codesettings = require("codesettings")
+    if config.name == "bacon_ls" then
+      local settings = codesettings.local_settings()["_settings"]["bacon_ls"]
+      if settings ~= nil then
+        config["settings"]["bacon_ls"] = settings
+        vim.print(config["settings"]["bacon_ls"])
+      end
+      return config
+    end
+
+    return codesettings.with_local_settings(config.name, config)
   end,
 })
 
@@ -306,35 +315,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- RUST
-vim.lsp.config("bacon_ls", {
-    init_options = {
-        updateOnSave = true,
-        runBaconInBackground = true,
-    }
+vim.lsp.config('bacon-ls', {
+    settings = {
+        bacon_ls = {
+            backend = "cargo",
+            cargo = {
+                command = "clippy",
+                checkOnSave = true,
+            },
+        },
+    },
 })
-
--- NOTE: using rustaceanvim instead
--- vim.lsp.config("rust_analyzer", {
---     settings = {
---         ['rust-analyzer'] = {
---             cargo = {
---                 buildScripts = {
---                     enable = true,
---                 },
---                 features = "all",
---             },
---             checkOnSave = {
---                 enable = false,
---             },
---             diagnostics = {
---                 enable = false,
---             },
---             procMacro = {
---                 enabled = true,
---             },
---         },
---     }
--- })
 
 vim.g.rustaceanvim = function()
     local cfg = require('rustaceanvim.config')
@@ -349,13 +340,12 @@ vim.g.rustaceanvim = function()
                         buildScripts = {
                             enable = true,
                         },
-                        features = "all",
                     },
                     checkOnSave = {
-                        enable = true,
+                        enable = false,
                     },
                     diagnostics = {
-                        enable = true,
+                        enable = false,
                     },
                     procMacro = {
                         enabled = true,
