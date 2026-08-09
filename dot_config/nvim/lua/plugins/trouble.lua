@@ -7,6 +7,12 @@ return {
         use_diagnostic_signs = true,
         modes = {
             diagnostics = {
+                filter = function(items)
+                    return vim.tbl_filter(function(item)
+                        local source = item["item.source"] or (item.item and item.item.source)
+                        return not (source and string.find(string.lower(source), "cspell", 1, true))
+                    end, items)
+                end,
                 win = {
                     size = 0.3,
                 },
