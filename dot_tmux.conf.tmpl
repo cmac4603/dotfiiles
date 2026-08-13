@@ -30,7 +30,11 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-logging'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'laktak/extrakto'
+{{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
 set -g @extrakto_clip_tool "pbcopy"
+{{- else }}
+set -g @extrakto_clip_tool "wl-copy"
+{{- end }}
 set -g @plugin 'tmux-plugins/tmux-battery'
 set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'jamesoff/tmux-loadavg'
