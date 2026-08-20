@@ -1,6 +1,9 @@
 return {
     "folke/which-key.nvim",
     event = "VeryLazy",
+    opts = {
+        preset = "modern",
+    },
     keys = {
         {
             "<leader>?",
@@ -10,8 +13,9 @@ return {
             desc = "Buffer Local Keymaps (which-key)",
         },
     },
-    config = function()
+    config = function(_, opts)
         local wk = require("which-key")
+        wk.setup(opts)
         local harpoon = require("harpoon")
 
         wk.add({
