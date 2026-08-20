@@ -17,12 +17,19 @@ return {
             vim.api.nvim_set_hl(0, "DapStopped", { fg = "#98c379" })
 
             vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-            vim.fn.sign_define("DapBreakpointCondition",
-                { text = "◆", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
-            vim.fn.sign_define("DapBreakpointRejected",
-                { text = "○", texthl = "DapBreakpointRejected", linehl = "", numhl = "" })
+            vim.fn.sign_define(
+                "DapBreakpointCondition",
+                { text = "◆", texthl = "DapBreakpointCondition", linehl = "", numhl = "" }
+            )
+            vim.fn.sign_define(
+                "DapBreakpointRejected",
+                { text = "○", texthl = "DapBreakpointRejected", linehl = "", numhl = "" }
+            )
             vim.fn.sign_define("DapLogPoint", { text = "◈", texthl = "DapLogPoint", linehl = "", numhl = "" })
-            vim.fn.sign_define("DapStopped", { text = "→", texthl = "DapStopped", linehl = "DapStoppedLine", numhl = "" })
+            vim.fn.sign_define(
+                "DapStopped",
+                { text = "→", texthl = "DapStopped", linehl = "DapStoppedLine", numhl = "" }
+            )
         end,
     },
 
@@ -33,10 +40,28 @@ return {
         ---@module 'dap-view'
         ---@type dapview.Config
         opts = {
+            auto_toggle = true,
             follow_tab = true,
             windows = {
-                position = "right",
-                size = 0.45,
+                size = 0.40,
+                position = "below",
+                terminal = {
+                    size = 0.25,
+                    position = "left",
+                    -- List of debug adapters for which the terminal should be ALWAYS hidden
+                    -- Can also be set to "true" to never show the terminal
+                    hide = {},
+                },
+            },
+            winbar = {
+                default_section = "scopes",
+                show_keymap_hints = true,
+                controls = {
+                    enabled = true,
+                },
+            },
+            virtual_text = {
+                enabled = false,
             },
         },
     },
@@ -85,5 +110,4 @@ return {
             "mfussenegger/nvim-dap",
         },
     },
-
 }
