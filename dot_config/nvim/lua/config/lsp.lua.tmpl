@@ -132,33 +132,6 @@ vim.api.nvim_create_autocmd("User", {
     end,
 })
 
-vim.lsp.config('rust-analyzer', {
-  before_init = function(init_params, config)
-    local codesettings = require('codesettings')
-    codesettings.with_local_settings(config.name, config)
-    -- Some settings must be passed at init time, for example rust-analyzer.workspace.discoverConfig
-    if config.default_settings and config.default_settings[config.name] then
-      init_params.initializationOptions = config.default_settings[config.name]
-    end
-  end,
-})
-
-vim.lsp.config("*", {
-  before_init = function(_, config)
-    local codesettings = require("codesettings")
-    if config.name == "bacon_ls" then
-      local settings = codesettings.local_settings()["_settings"]["bacon_ls"]
-      if settings ~= nil then
-        config["settings"]["bacon_ls"] = settings
-        vim.print(config["settings"]["bacon_ls"])
-      end
-      return config
-    end
-
-    return codesettings.with_local_settings(config.name, config)
-  end,
-})
-
 -- CSPELL
 vim.lsp.config("cspell_lsp", {
     cmd = { "cspell-lsp", "--stdio", "--config", "~/.config/cspell/cspell.config.yaml" },

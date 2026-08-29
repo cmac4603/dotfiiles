@@ -6,12 +6,6 @@ return {
     "neovim/nvim-lspconfig",
     "b0o/schemastore.nvim",
 
-    {
-        "mrjones2014/codesettings.nvim",
-        lazy = false,
-        opts = {},
-    },
-
     -- golang
     {
         "olexsmir/gopher.nvim",
