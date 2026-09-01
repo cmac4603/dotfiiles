@@ -9,14 +9,6 @@ return {
     -- golang
     {
         "olexsmir/gopher.nvim",
-        ft = "go",
-        build = function()
-            -- will update plugin's deps on every update
-            vim.cmd.GoInstallDeps()
-        end,
-        ---@module "gopher"
-        ---@type gopher.Config
-        opts = {},
     },
 
     -- rust
