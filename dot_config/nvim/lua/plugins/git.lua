@@ -47,18 +47,6 @@ return {
         cmd = "CodeDiff",
     },
 
-    -- {
-    --     "https://tangled.org/cmac4603.dev/gh-pr-comments.nvim",
-    --     opts = {},
-    -- },
-
-    -- local dev plugin location
-    {
-        dir = "~/dev/repos/gh-pr-comments.nvim.git/add-config",
-        name = "gh-pr-comments",
-        opts = {},
-    },
-
     {
         "ldelossa/gh.nvim", -- pr-reviews
         dependencies = {
