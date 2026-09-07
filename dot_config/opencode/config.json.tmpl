@@ -50,6 +50,15 @@
                 "http://127.0.0.1:9222"
             ]
         },
+        "github": {
+          "type": "remote",
+          "url": "https://api.githubcopilot.com/mcp/",
+          "enabled": true,
+          "oauth": false,
+          "headers": {
+            "Authorization": "Bearer {env:GITHUB_TOKEN}"
+          }
+        },
 {{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
         "jira": {
             "type": "remote",
