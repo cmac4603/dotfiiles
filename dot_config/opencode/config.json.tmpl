@@ -60,6 +60,15 @@
           }
         },
 {{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
+        "wiz": {
+            "type": "remote",
+            "url": "https://mcp.app.wiz.io",
+            "headers": {
+                "Wiz-Client-Id": "{{ .wiz_client_id }}",
+                "Wiz-Client-Secret": "{{ .wiz_client_secret }}",
+                "Wiz-DataCenter": "us20"
+            }
+        },
         "jira": {
             "type": "remote",
             "url": "https://mcp.atlassian.com/v1/mcp",
