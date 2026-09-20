@@ -1,11 +1,10 @@
 return {
-    "scottmckendry/cyberdream.nvim",
+    "serhez/teide.nvim",
     lazy = false,
     priority = 1000,
-    opts = {
-        borderless_pickers = true,
-    },
+    -- move colorscheme activation if changing default options
+    opts = {},
     config = function()
-        vim.cmd("colorscheme cyberdream")
+        vim.cmd("colorscheme teide")
     end,
 }
