@@ -6,6 +6,8 @@ require("config.dap")
 
 vim.loader.enable()
 
+vim.cmd([[colorscheme tokyonight]])
+
 require("nvim-dap-projects").search_project_config()
 
 vim.g.tmux_navigator_no_mappings = 1

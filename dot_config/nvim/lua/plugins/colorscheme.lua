@@ -1,10 +1,12 @@
 return {
-    "serhez/teide.nvim",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    -- move colorscheme activation if changing default options
-    opts = {},
-    config = function()
-        vim.cmd("colorscheme teide")
-    end,
+    ---@type tokyonight.Config
+    opts = {
+        terminal_colors = false,
+        styles = {
+            keywords = { italic = false },
+        },
+    },
 }
