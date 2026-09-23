@@ -48,6 +48,7 @@ vim.lsp.enable({
     "cssls",
     "djlint",
     "dockerls",
+    "fastly_vcl",
     "gradle",
     "gopls",
 {{- if eq .chezmoi.hostname "adder" }}
@@ -148,6 +149,36 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end
     end,
     desc = "Detach cspell_lsp from terminal buffers",
+})
+
+-- FASTLY VCL
+-- Not on npm / mason; the server only ships inside the VS Code extension repo
+-- and hard-codes a relative import of ../falco-js, so it must run from a full
+-- checkout. Install/update with:
+--
+--   git clone --depth 1 https://github.com/fastly/vscode-fastly-vcl \
+--       ~/.local/share/nvim/fastly-vcl-lsp \
+--     && cd ~/.local/share/nvim/fastly-vcl-lsp \
+--     && npm ci --ignore-scripts && npm run build
+--
+-- (--ignore-scripts skips downloading bundled falco binaries; we point the
+-- server at the falco already on PATH via settings.fastly.vcl.falcoPath.)
+local fastly_vcl_dir = vim.fn.stdpath("data") .. "/fastly-vcl-lsp"
+vim.lsp.config("fastly_vcl", {
+    cmd = { "node", fastly_vcl_dir .. "/server/out/server.js", "--stdio" },
+    filetypes = { "vcl" },
+    root_markers = { "fastly.toml", ".git" },
+    settings = {
+        fastly = {
+            vcl = {
+                lintingEnabled = true,
+                maxLintingIssues = 100,
+                falcoPath = vim.fn.exepath("falco"),
+                inlayHintsEnabled = true,
+                formattingEnabled = true,
+            },
+        },
+    },
 })
 
 -- GO
