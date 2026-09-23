@@ -108,10 +108,11 @@ return {
             }
         end,
     },
-    {
-        "LinArcX/telescope-env.nvim",
-        config = function()
-            require("telescope").load_extension("env")
-        end,
-    },
+    -- this has one missing, now just 404 on github
+    -- {
+    --     "LinArcX/telescope-env.nvim",
+    --     config = function()
+    --         require("telescope").load_extension("env")
+    --     end,
+    -- },
 }
