@@ -152,9 +152,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- FASTLY VCL
--- Not on npm / mason; the server only ships inside the VS Code extension repo
--- and hard-codes a relative import of ../falco-js, so it must run from a full
--- checkout. Install/update with:
+-- Install/update with:
 --
 --   git clone --depth 1 https://github.com/fastly/vscode-fastly-vcl \
 --       ~/.local/share/nvim/fastly-vcl-lsp \
