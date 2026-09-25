@@ -49,6 +49,7 @@ return {
             gitcommit = { "commitmsgfmt" },
             go = { "goimports", "gofmt" },
             html = { "biome" },
+            http = { "kulala-fmt" },
             javascript = { "eslint_d" },
             json = { "biome" },
             lua = { "stylua" },
@@ -62,6 +63,7 @@ return {
                 -- To organize the imports.
                 "ruff_organize_imports",
             },
+            rest = { "kulala-fmt" },
             sql = { "sql_formatter" },
             terraform = { "terraform_fmt" },
             toml = { "taplo" },
