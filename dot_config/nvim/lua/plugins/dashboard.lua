@@ -104,7 +104,7 @@ return {
                 { section = "startup" },
             },
         },
-        indent = { enabled = false },
+        indent = { enabled = true },
         input = { enabled = true },
         gitbrowse = { enabled = true },
         notifier = {
