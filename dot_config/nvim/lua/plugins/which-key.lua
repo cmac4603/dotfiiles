@@ -401,6 +401,11 @@ return {
                 desc = "Show notification history (logs)",
             },
             {
+                "<leader>p",
+                ":Beside leaf<CR>",
+                desc = "Preview markdown with leaf",
+            },
+            {
                 "<leader>s",
                 ":Silicon<CR>",
                 desc = "Sceenshot selected code",
