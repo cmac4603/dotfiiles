@@ -1,28 +1,30 @@
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '<filetype>' },
-  callback = function() vim.treesitter.start() end,
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "<filetype>" },
+    callback = function()
+        vim.treesitter.start()
+    end,
 })
 
 vim.filetype.add({
-  extension = {
-    gotmpl = 'gotmpl',
-  },
-  pattern = {
-    [".*/templates/.*%.tpl"] = "helm",
-    [".*/templates/.*%.ya?ml"] = "helm",
-    ["helmfile.*%.ya?ml"] = "helm",
-  },
+    extension = {
+        gotmpl = "gotmpl",
+    },
+    pattern = {
+        [".*/templates/.*%.tpl"] = "helm",
+        [".*/templates/.*%.ya?ml"] = "helm",
+        ["helmfile.*%.ya?ml"] = "helm",
+    },
 })
 
-vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.wo[0][0].foldmethod = 'expr'
+vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.wo[0][0].foldmethod = "expr"
 
 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
 local M = {}
 
 M.install_default_parsers = function()
-    require "nvim-treesitter".install {
+    require("nvim-treesitter").install({
         "bash",
         "comment",
         "csv",
@@ -68,7 +70,7 @@ M.install_default_parsers = function()
         "typescript",
         "vimdoc",
         "yaml",
-    }
+    })
 end
 
 return M
