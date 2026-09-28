@@ -3,7 +3,7 @@
   "advanced-git-search.nvim": { "branch": "main", "commit": "cead1214709226bdef89093f0c58964fb65c81e8" },
   "auto-hlsearch.nvim": { "branch": "main", "commit": "77502069b22e48ab7736fe9cf53e1fdac1923bca" },
   "barbecue.nvim": { "branch": "main", "commit": "3e31404f0b93a2c30d151abf0648650ac811c664" },
-  "beside.nvim": { "branch": "main", "commit": "2744b128d8737d5ff012b9ecc30803b81bdeb3f1" },
+  "beside.nvim": { "branch": "main", "commit": "ce2f889718f13b22eb8cdeb6738a74f7bbea06a4" },
   "blame.nvim": { "branch": "main", "commit": "179da7aaacce7c52874af636255ede72dd6fe796" },
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
   "brr.nvim": { "branch": "main", "commit": "7e56763d1f0af9a7cee3ce5ef8b9bdc4982a4675" },
