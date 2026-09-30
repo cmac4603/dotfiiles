@@ -140,8 +140,10 @@ return {
             },
             {
                 "<leader>fe",
-                "<CMD>Telescope env<CR>",
-                desc = "Find environment variables",
+                function()
+                    require("telescope").extensions.rest.select_env()
+                end,
+                desc = "Find environment variables for .http files",
             },
             {
                 "<leader>ff",
@@ -379,6 +381,12 @@ return {
             { "<leader>ot", "<CMD>OverseerToggle<CR>", desc = "Toggle Overseer" },
             { "<leader>or", "<CMD>OverseerRun<CR>", desc = "Run Overseer" },
             { "<leader>oc", "<CMD>OverseerClose<CR>", desc = "Close Overseer" },
+        })
+
+        wk.add({
+            { "<leader>r", group = "Rest.nvim" },
+            { "<leader>rs", "<CMD>Rest run<CR>", desc = "REST send request" },
+            { "<leader>rc", "<CMD>Rest cookies<CR>", desc = "REST edit cookies" },
         })
 
         wk.add({
