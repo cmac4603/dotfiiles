@@ -33,6 +33,17 @@ return {
                 prompt_prefix = " ",
                 selection_caret = " ",
                 file_ignore_patterns = { "/%.git/", "node_modules" },
+                vimgrep_arguments = {
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--smart-case",
+                    "--hidden",
+                    "--glob=!.git/",
+                },
                 mappings = {
                     i = {
                         ["<C-j>"] = require("telescope.actions").move_selection_next,
