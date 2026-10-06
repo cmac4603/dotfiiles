@@ -39,6 +39,10 @@
                 "https://mcp.linear.app/mcp"
             ]
         },
+        "stripe": {
+            "type": "remote",
+            "url": "https://mcp.stripe.com"
+        },
 {{- end }}
         "chrome-devtools": {
             "type": "local",
@@ -58,6 +62,13 @@
           "headers": {
             "Authorization": "Bearer {env:GITHUB_TOKEN}"
           }
+        },
+        "playwright": {
+            "type": "local",
+            "command": [
+                "npx",
+                "@playwright/mcp@latest"
+            ]
         },
 {{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
         "wiz": {
