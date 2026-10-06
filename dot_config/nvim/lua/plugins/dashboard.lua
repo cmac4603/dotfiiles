@@ -19,6 +19,7 @@ return {
                     { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                     { icon = " ", key = "t", desc = "Find Text", action = ":Telescope live_grep" },
                     { icon = " ", key = "g", desc = "Search Git", action = ":AdvancedGitSearch" },
+                    { icon = " ", key = "d", desc = "Git Diff", action = ":CodeDiff" },
                     {
                         icon = " ",
                         key = "h",
@@ -30,7 +31,7 @@ return {
                     },
                     { icon = " ", key = "s", desc = "Restore Session", section = "session" },
                     { icon = " ", key = "r", desc = "Open Github PR", action = ":GHOpenPR" },
-                    { icon = "🖴 ", key = "d", desc = "Open DBUI", action = ":DBUI" },
+                    { icon = "🖴 ", key = "D", desc = "Open DBUI", action = ":DBUI" },
                     {
                         icon = "󰒲 ",
                         key = "L",
