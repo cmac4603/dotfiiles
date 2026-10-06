@@ -97,6 +97,20 @@ return {
                 desc = "Find all diagnostics",
             },
             {
+                "<leader>fdd",
+                function()
+                    require("telescope.builtin").lsp_definitions()
+                end,
+                desc = "Find LSP definitions",
+            },
+            {
+                "<leader>fdw",
+                function()
+                    require("telescope.builtin").diagnostics({ severity = { min = vim.diagnostic.severity.WARN } })
+                end,
+                desc = "Find diagnostics WARN or higher",
+            },
+            {
                 "<leader>fDb",
                 function()
                     require("telescope").extensions.dap.list_breakpoints({})
@@ -130,13 +144,6 @@ return {
                     require("telescope").extensions.dap.variables({})
                 end,
                 desc = "Find DAP variables",
-            },
-            {
-                "<leader>fdw",
-                function()
-                    require("telescope.builtin").diagnostics({ severity = { min = vim.diagnostic.severity.WARN } })
-                end,
-                desc = "Find diagnostics WARN or higher",
             },
             {
                 "<leader>fe",
