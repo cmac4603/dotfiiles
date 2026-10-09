@@ -65,7 +65,8 @@ abbr -a -- clear-dns "sudo killall -HUP mDNSResponder"
 abbr -a -- l eza --all --long --group --header --git
 abbr -a -- ngrok-hearst ngrok http --domain=cmac4603-hearst.ngrok.io 8081
 abbr -a -- nv nvim
-abbr -a -- t tmux
+
+abbr -a -- uvb uv version --bump
 
 # vault (hashicorp) things
 abbr -a -- vlogin vault login -method=github token=$GITHUB_TOKEN
