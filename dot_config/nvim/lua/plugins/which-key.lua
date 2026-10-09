@@ -330,7 +330,7 @@ return {
 
             {
                 "<leader>gm",
-                "<CMD>Gdiffsplit!<CR>",
+                "<CMD>Gvdiffsplit!<CR>",
                 desc = "Git merge conflicts (fugitive)",
             },
             {
