@@ -1,5 +1,5 @@
 return {
-    'arnamak/stay-centered.nvim',
+    "arnamak/stay-centered.nvim",
     lazy = false,
     opts = {
         allow_scroll_move = false,
@@ -13,6 +13,7 @@ return {
             "mason",
             "oil_preview",
             "oil",
+            "OverseerOutput",
             "qf",
             "snacks_dashboard",
             "snacks_notif",
@@ -20,5 +21,5 @@ return {
             "TelescopeResults",
             "toggleterm",
         },
-    }
+    },
 }
