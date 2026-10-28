@@ -19,7 +19,7 @@ return {
                     { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                     { icon = " ", key = "t", desc = "Find Text", action = ":Telescope live_grep" },
                     { icon = " ", key = "g", desc = "Search Git", action = ":AdvancedGitSearch" },
-                    { icon = " ", key = "d", desc = "Git Diff", action = ":CodeDiff" },
+                    { icon = " ", key = "d", desc = "Git Diff", action = ":DiffviewOpen" },
                     {
                         icon = " ",
                         key = "h",

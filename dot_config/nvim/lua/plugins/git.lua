@@ -43,8 +43,7 @@ return {
     },
 
     {
-        "esmuellert/codediff.nvim",
-        cmd = "CodeDiff",
+        "sindrets/diffview.nvim",
     },
 
     {
