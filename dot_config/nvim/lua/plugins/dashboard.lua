@@ -30,6 +30,7 @@ return {
                         end,
                     },
                     { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+                    { icon = " ", key = "m", desc = "Open Atlas", action = ":Atlas browse ." },
                     { icon = " ", key = "r", desc = "Open Github PR", action = ":GHOpenPR" },
                     { icon = "🖴 ", key = "D", desc = "Open DBUI", action = ":DBUI" },
                     {

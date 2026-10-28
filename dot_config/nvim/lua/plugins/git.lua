@@ -47,6 +47,55 @@ return {
     },
 
     {
+        "emrearmagan/atlas.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "sindrets/diffview.nvim",
+        },
+        -- See Configuration below
+        ---@type AtlasConfig
+        opts = {
+            providers = {
+                ---@type AtlasGitHubConfig
+                github = {
+                    cache_ttl = 120,
+                },
+            },
+            pulls = {
+                ---@type AtlasGitHubPullsConfig
+                github = {
+                    ---@type AtlasGitHubViewConfig[]
+                    views = {
+                        {
+                            name = "My PRs",
+                            key = "1",
+                            layout = "plain",
+                            current_repo = true, -- Limit this view to the local repository.
+                            search = "author:@me sort:updated-desc",
+                        },
+                        {
+                            name = "Team",
+                            key = "2",
+                            layout = "compact",
+                            search = "org:Media-Platforms sort:updated-desc",
+                        },
+                    },
+
+                    bookmarks = {
+                        key = "S", -- default
+                        label = "Search", -- default
+                        items = {
+                            ["Drafts"] = "is:pr is:draft author:@me",
+                            ["Recently merged"] = "is:pr is:merged author:@me sort:updated-desc",
+                            ["Review requested"] = "is:pr is:open review-requested:@me",
+                        },
+                    },
+                },
+            },
+        },
+    },
+
+    {
         "ldelossa/gh.nvim", -- pr-reviews
         dependencies = {
             {

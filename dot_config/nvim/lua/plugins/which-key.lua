@@ -232,7 +232,7 @@ return {
             },
             {
                 "<leader>gA",
-                "<CMD>Git add -u<CR>",
+                "<CMD>Atlas browse .<CR>",
                 desc = "Git add (fugitive)",
             },
             {
