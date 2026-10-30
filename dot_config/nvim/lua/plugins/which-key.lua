@@ -347,15 +347,20 @@ return {
             },
             {
                 "<leader>gp",
-                "<CMD>Git push<CR>",
-                desc = "Git push (fugitive)",
-            },
-            {
-                "<leader>gP",
                 function()
                     vim.fn.jobstart("gh pr view --web", { detach = true })
                 end,
                 desc = "Open Github PR",
+            },
+            {
+                "<leader>gP",
+                "<CMD>Atlas open .<CR>",
+                desc = "Atlas open current pull request",
+            },
+            {
+                "<leader>gR",
+                "<CMD>Atlas review .<CR>",
+                desc = "Atlas review a pull request",
             },
             {
                 "<leader>gr",
