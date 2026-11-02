@@ -21,6 +21,7 @@ abbr -a -- gclb git clone --bare
 abbr -a -- gcl git clone
 abbr -a -- gcmsg git commit -m
 abbr -a -- gco git checkout
+abbr -a -- gcp git cherry-pick
 abbr -a -- gd git diff
 abbr -a -- gdependabot gh pr list --author "@dependabot[bot]" --state open --json "headRefName,headRefOid"
 abbr -a -- gf git fetch
