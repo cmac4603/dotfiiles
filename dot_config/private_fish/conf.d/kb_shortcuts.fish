@@ -32,6 +32,7 @@ abbr -a -- gloga git log --oneline --decorate --graph --all
 abbr -a -- gpf git push --force
 abbr -a -- gp git push
 abbr -a -- gps gh pr status
+abbr -a -- gpv gh pr view --web
 abbr -a -- grb git rebase
 abbr -a -- grbi git rebase --interactive
 abbr -a -- grhh git reset --hard
