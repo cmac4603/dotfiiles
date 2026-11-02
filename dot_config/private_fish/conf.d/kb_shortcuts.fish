@@ -31,8 +31,6 @@ abbr -a -- glog git log --oneline --decorate --graph
 abbr -a -- gloga git log --oneline --decorate --graph --all
 abbr -a -- gpf git push --force
 abbr -a -- gp git push
-abbr -a -- gps gh pr status
-abbr -a -- gpv gh pr view --web
 abbr -a -- grb git rebase
 abbr -a -- grbi git rebase --interactive
 abbr -a -- grhh git reset --hard
@@ -42,6 +40,9 @@ abbr -a -- gwt git worktree
 abbr -a -- gwtls git worktree list
 abbr -a -- gwtmv git worktree move
 abbr -a -- gwtrm git worktree remove
+# git things - github pr
+abbr -a -- prs gh pr status
+abbr -a -- pro gh pr view --web
 
 # infri things
 abbr -a -- infriopsdir "set -gx INFRI_OPS_DIR "
