@@ -13,37 +13,37 @@ abbr -a -- hm history merge
 abbr -a -- esprs . $HOME/export-esp.sh
 
 # git things
-abbr -a -- gaa git add -A
 abbr -a -- ga git add
+abbr -a -- gaa git add -A
 abbr -a -- gau git add -u
 abbr -a -- gc git commit
-abbr -a -- gclb git clone --bare
 abbr -a -- gcl git clone
+abbr -a -- gclb git clone --bare
 abbr -a -- gcmsg git commit -m
 abbr -a -- gco git checkout
 abbr -a -- gcp git cherry-pick
 abbr -a -- gd git diff
-abbr -a -- gdependabot gh pr list --author "@dependabot[bot]" --state open --json "headRefName,headRefOid"
 abbr -a -- gf git fetch
 abbr -a -- gfo git fetch origin
 abbr -a -- gl git pull
 abbr -a -- glg git lg
 abbr -a -- glog git log --oneline --decorate --graph
 abbr -a -- gloga git log --oneline --decorate --graph --all
-abbr -a -- gpf git push --force
 abbr -a -- gp git push
+abbr -a -- gpf git push --force
 abbr -a -- grb git rebase
 abbr -a -- grbi git rebase --interactive
 abbr -a -- grhh git reset --hard
 abbr -a -- gst git status
-abbr -a -- gwta git worktree add
 abbr -a -- gwt git worktree
+abbr -a -- gwta git worktree add
 abbr -a -- gwtls git worktree list
 abbr -a -- gwtmv git worktree move
 abbr -a -- gwtrm git worktree remove
 # git things - github pr
-abbr -a -- prs gh pr status
+abbr -a -- prd gh pr list --author "@dependabot[bot]" --state open --json "headRefName,headRefOid"
 abbr -a -- pro gh pr view --web
+abbr -a -- prs gh pr status
 
 # infri things
 abbr -a -- infriopsdir "set -gx INFRI_OPS_DIR "
