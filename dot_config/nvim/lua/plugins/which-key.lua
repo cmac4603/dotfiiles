@@ -256,48 +256,18 @@ return {
             },
             {
                 "<leader>gdc",
-                "<CMD>DiffviewClose<CR>",
-                desc = "Close Diffview",
+                "<CMD>DiffBanditCommitPanel<CR>",
+                desc = "Toggle the Git commit panel",
             },
             {
-                "<leader>gdh",
-                ":DiffviewOpen HEAD~",
-                desc = "Open Diffview incl. last x commits",
-            },
-            {
-                "<leader>gd1",
-                "<CMD>DiffviewOpen HEAD~1<CR>",
-                desc = "Open Diffview incl. last 1 commits",
-            },
-            {
-                "<leader>gd2",
-                "<CMD>DiffviewOpen HEAD~2<CR>",
-                desc = "Open Diffview incl. last 2 commits",
-            },
-            {
-                "<leader>gd3",
-                "<CMD>DiffviewOpen HEAD~3<CR>",
-                desc = "Open Diffview incl. last 3 commits",
-            },
-            {
-                "<leader>gd4",
-                "<CMD>DiffviewOpen HEAD~4<CR>",
-                desc = "Open Diffview incl. last 4 commits",
-            },
-            {
-                "<leader>gd5",
-                "<CMD>DiffviewOpen HEAD~5<CR>",
-                desc = "Open Diffview incl. last 5 commits",
+                "<leader>gdf",
+                "<CMD>DiffBanditGitCurrent<CR>",
+                desc = "Open the current file as a Git diff",
             },
             {
                 "<leader>gdo",
-                "<CMD>DiffviewOpen<CR>",
-                desc = "Open Diffview",
-            },
-            {
-                "<leader>gdr",
-                ":DiffviewOpen ",
-                desc = "Open Diffview by range/sha/two revisions",
+                "<CMD>DiffBanditGit<CR>",
+                desc = "Open the current repository's changed files",
             },
             {
                 "<leader>gf",

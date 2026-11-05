@@ -43,7 +43,10 @@ return {
     },
 
     {
-        "sindrets/diffview.nvim",
+        "CoreyKaylor/diffbandit.nvim",
+        config = function()
+            require("diffbandit").setup()
+        end,
     },
 
     {
