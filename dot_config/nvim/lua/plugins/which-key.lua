@@ -256,17 +256,17 @@ return {
             },
             {
                 "<leader>gdc",
-                "<CMD>DiffBanditCommitPanel<CR>",
+                "<CMD>DiffviewClose<CR>",
                 desc = "Toggle the Git commit panel",
             },
             {
                 "<leader>gdf",
-                "<CMD>DiffBanditGitCurrent<CR>",
-                desc = "Open the current file as a Git diff",
+                "<CMD>DiffviewFileHistory %<CR>",
+                desc = "Open file history for the current file",
             },
             {
                 "<leader>gdo",
-                "<CMD>DiffBanditGit<CR>",
+                "<CMD>DiffviewOpen<CR>",
                 desc = "Open the current repository's changed files",
             },
             {
