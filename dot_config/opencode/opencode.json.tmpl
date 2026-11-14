@@ -1,119 +1,145 @@
 {
-    "$schema": "https://opencode.ai/config.json",
-    "share": "manual",
-    "update": "auto",
-    "policies": [
-        { "action": "provider.use", "resource": "openai", "effect": "deny" }
-    ],
-    "plugins": ["superpowers@git+https://github.com/obra/superpowers.git#v6.4.1"],
-    "providers": {
-        "amazon-bedrock": {
-            "models": {
-                "anthropic-claude-sonnet-4.6": {
-                    "modelID": "arn:aws:bedrock:us-east-1:758497319431:inference-profile/global.anthropic.claude-sonnet-4-6"
-                }
-            },
-            "settings": {
-                "region": "us-east-1",
-                "profile": "mediaos-dev-aidev"
-            }
-        },
-        "google": {
-            "settings": {
-                "projectId": "gen-lang-client-0222096719"
-            }
-        }
-    },
-    "permissions": [
-        { "action": "edit", "resource": "*", "effect": "ask" },
-        { "action": "shell", "resource": "*", "effect": "ask" },
-        { "action": "external_directory", "resource": "*", "effect": "ask" }
-    ],
-    "mcp": {
-        "servers": {
-{{- if eq .chezmoi.hostname "adder" }}
-        "linear": {
-            "type": "local",
-            "command": [
-                "npx",
-                "-y",
-                "mcp-remote",
-                "https://mcp.linear.app/mcp"
-            ]
-        },
-        "stripe": {
-            "type": "remote",
-            "url": "https://mcp.stripe.com"
-        },
-{{- end }}
-        "chrome-devtools": {
-            "type": "local",
-            "command": [
-                "npx",
-                "-y",
-                "chrome-devtools-mcp@latest",
-                "--browserUrl",
-                "http://127.0.0.1:9222"
-            ]
-        },
-        "github": {
-          "type": "remote",
-          "url": "https://api.githubcopilot.com/mcp/",
-          "disabled": false,
-          "oauth": false,
-          "headers": {
-            "Authorization": "Bearer {env:GITHUB_TOKEN}"
-          }
-        },
-        "playwright": {
-            "type": "local",
-            "command": [
-                "npx",
-                "@playwright/mcp@latest"
-            ]
-        },
-{{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
-        "wiz": {
-            "type": "remote",
-            "url": "https://mcp.app.wiz.io",
-            "headers": {
-                "Wiz-Client-Id": "{{ .wiz_client_id }}",
-                "Wiz-Client-Secret": "{{ .wiz_client_secret }}",
-                "Wiz-DataCenter": "us20"
-            }
-        },
-        "jira": {
-            "type": "remote",
-            "url": "https://mcp.atlassian.com/v2/mcp",
-            "disabled": false
-        },
-        "bigquery": {
-            "type": "local",
-            "command": ["toolbox", "--prebuilt", "bigquery", "--stdio"],
-            "environment": {
-                "BIGQUERY_PROJECT": "hmm-mediaos-loadtesting-data"
-            }
-        },
-        "sentry": {
-            "type": "local",
-            "command": [
-                "npx",
-                "mcp-remote@latest",
-                "https://mcp.sentry.dev/mcp"
-            ]
-        },
-{{- end }}
-        "context7": {
-            "type": "local",
-            "command": [
-                "npx",
-                "-y",
-                "@upstash/context7-mcp",
-                "--api-key",
-                "{{ .context7_api_key }}"
-            ],
-            "disabled": false
-        }
-        }
+  "$schema": "https://opencode.ai/config.json",
+  "share": "manual",
+  "update": "auto",
+  "policies": [
+    {
+      "action": "provider.use",
+      "resource": "openai",
+      "effect": "deny"
     }
+  ],
+  "plugins": [
+    "superpowers@git+https://github.com/obra/superpowers.git#v6.4.1"
+  ],
+  "providers": {
+    "amazon-bedrock": {
+      "models": {
+        "anthropic-claude-sonnet-4.6": {
+          "modelID": "arn:aws:bedrock:us-east-1:758497319431:inference-profile/global.anthropic.claude-sonnet-4-6"
+        }
+      },
+      "settings": {
+        "region": "us-east-1",
+        "profile": "mediaos-dev-aidev"
+      }
+    },
+    "google": {
+      "settings": {
+        "projectId": "gen-lang-client-0222096719"
+      }
+    }
+  },
+  "permissions": [
+    {
+      "action": "edit",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "external_directory",
+      "resource": "*",
+      "effect": "ask"
+    }
+  ],
+  "mcp": {
+    "servers": {
+{{- if eq .chezmoi.hostname "adder" }}
+    "atuin": {
+      "type": "local",
+      "command": [
+        "/home/cmac4603/.atuin/bin/atuin",
+        "mcp"
+      ],
+      "enabled": true
+    },
+      "linear": {
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "mcp-remote",
+          "https://mcp.linear.app/mcp"
+        ]
+      },
+      "stripe": {
+        "type": "remote",
+        "url": "https://mcp.stripe.com"
+      },
+{{- end }}
+      "chrome-devtools": {
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "chrome-devtools-mcp@latest",
+          "--browserUrl",
+          "http://127.0.0.1:9222"
+        ]
+      },
+      "github": {
+        "type": "remote",
+        "url": "https://api.githubcopilot.com/mcp/",
+        "disabled": false,
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {env:GITHUB_TOKEN}"
+        }
+      },
+      "playwright": {
+        "type": "local",
+        "command": [
+          "npx",
+          "@playwright/mcp@latest"
+        ]
+      },
+{{- if eq .chezmoi.hostname "HMILSQ-6T9DLHG6" }}
+      "wiz": {
+        "type": "remote",
+        "url": "https://mcp.app.wiz.io",
+        "headers": {
+          "Wiz-Client-Id": "{{ .wiz_client_id }}",
+          "Wiz-Client-Secret": "{{ .wiz_client_secret }}",
+          "Wiz-DataCenter": "us20"
+        }
+      },
+      "jira": {
+        "type": "remote",
+        "url": "https://mcp.atlassian.com/v2/mcp",
+        "disabled": false
+      },
+      "bigquery": {
+        "type": "local",
+        "command": ["toolbox", "--prebuilt", "bigquery", "--stdio"],
+        "environment": {
+          "BIGQUERY_PROJECT": "hmm-mediaos-loadtesting-data"
+        }
+      },
+      "sentry": {
+        "type": "local",
+        "command": [
+          "npx",
+          "mcp-remote@latest",
+          "https://mcp.sentry.dev/mcp"
+        ]
+      },
+{{- end }}
+      "context7": {
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "@upstash/context7-mcp",
+          "--api-key",
+          "{{ .context7_api_key }}"
+        ],
+        "disabled": false
+      }
+    }
+  }
 }
