@@ -47,7 +47,33 @@ return {
                 desc = "Generate Unit Tests",
                 mode = { "n", "v" },
             },
-            { "<leader>ao", "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>", desc = "Open Opencode" },
+            {
+                "<leader>ao",
+                function()
+                    local panes = vim.fn.systemlist({ "tmux", "list-panes", "-F", "#{pane_id} #{@opencode}" })
+                    for _, line in ipairs(panes) do
+                        local id, tag = line:match("^(%S+) ?(%S*)")
+                        if tag == "1" then
+                            vim.fn.system({ "tmux", "select-pane", "-t", id })
+                            return
+                        end
+                    end
+                    local id = vim.trim(vim.fn.system({
+                        "tmux",
+                        "split-window",
+                        "-h",
+                        "-P",
+                        "-F",
+                        "#{pane_id}",
+                        "-c",
+                        vim.fn.getcwd(),
+                        "opencode",
+                        ".",
+                    }))
+                    vim.fn.system({ "tmux", "set-option", "-p", "-t", id, "@opencode", "1" })
+                end,
+                desc = "Open Opencode",
+            },
         })
 
         wk.add({
