@@ -67,8 +67,9 @@ return {
                         "#{pane_id}",
                         "-c",
                         vim.fn.getcwd(),
-                        "opencode",
-                        ".",
+                        "fish",
+                        "-c",
+                        "opencode .",
                     }))
                     vim.fn.system({ "tmux", "set-option", "-p", "-t", id, "@opencode", "1" })
                 end,
